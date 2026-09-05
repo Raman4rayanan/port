@@ -72,7 +72,7 @@ export default function Home() {
         ABOUT PREVIEW
         ========================================
       */}
-      <section className="relative min-h-[100svh] w-full py-20 px-6 md:px-10 border-t border-[var(--foreground)]/10 flex flex-col justify-center">
+      <section className="relative min-h-screen w-full py-20 px-6 md:px-10 border-t border-[var(--foreground)]/10 flex flex-col justify-center">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-10 justify-between items-start">
           <FadeIn className="font-mono text-xs tracking-widest text-[var(--muted)] w-full md:w-1/4">
             [ 01 / IDENTITY ]
@@ -97,7 +97,7 @@ export default function Home() {
         WORK PREVIEW
         ========================================
       */}
-      <section className="relative min-h-[100svh] w-full py-20 px-6 md:px-10 bg-[#09090B] text-[#FAFAFA] flex flex-col justify-center">
+      <section className="relative min-h-screen w-full py-20 px-6 md:px-10 bg-[#09090B] text-[#FAFAFA] flex flex-col justify-center">
         <div className="max-w-7xl mx-auto w-full">
           <FadeIn className="font-mono text-xs tracking-widest text-zinc-500 mb-20">
             [ 02 / FEATURED BUILDS ]
@@ -148,7 +148,7 @@ export default function Home() {
         SKILLS
         ========================================
       */}
-      <section className="relative min-h-[100svh] w-full py-20 px-6 md:px-10 overflow-hidden flex flex-col justify-center">
+      <section className="relative min-h-screen w-full py-20 px-6 md:px-10 overflow-hidden flex flex-col justify-center border-t border-[var(--foreground)]/10">
         <div className="max-w-7xl mx-auto flex flex-col gap-40 w-full">
           
           <div className="w-full">
@@ -171,9 +171,9 @@ export default function Home() {
         RESUME & INNOVATIONS
         ========================================
       */}
-      <section className="relative min-h-[100svh] w-full py-20 px-6 md:px-10 flex flex-col justify-center">
+      <section className="relative min-h-screen w-full py-20 px-6 md:px-10 flex flex-col justify-center border-t border-[var(--foreground)]/10">
         <div className="max-w-7xl mx-auto w-full">
-          <div className="w-full flex flex-col md:flex-row justify-between items-start gap-10 border-t border-[var(--foreground)]/10 pt-20">
+          <div className="w-full flex flex-col md:flex-row justify-between items-start gap-10">
             <div className="w-full md:w-3/5">
               <FadeIn className="font-mono text-xs tracking-widest text-[var(--muted)] mb-10">
                 [ 04 / RESUME & INNOVATION ]
@@ -210,8 +210,8 @@ export default function Home() {
         CONTACT
         ========================================
       */}
-      <Link href="/contact" className="block w-full min-h-[100svh] interactive group" data-cursor-text="CONTACT ME">
-        <section className="relative w-full min-h-[100svh] flex flex-col justify-center items-center py-20 px-6 md:px-10 bg-[var(--foreground)] text-[var(--background)] transition-colors duration-700 group-hover:bg-[var(--accent)]">
+      <Link href="/contact" className="block w-full min-h-screen interactive group" data-cursor-text="CONTACT ME">
+        <section className="relative w-full min-h-screen flex flex-col justify-center items-center py-20 px-6 md:px-10 bg-[var(--foreground)] text-[var(--background)] transition-colors duration-700 group-hover:bg-[var(--accent)]">
           <FadeIn className="font-mono text-xs tracking-widest text-white/50 mb-10 text-center">
             [ 05 / INITIATE ]
           </FadeIn>
