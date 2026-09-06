@@ -24,8 +24,15 @@ export default function SocialOrbit() {
 
   return (
     <div className="relative flex flex-col pointer-events-auto">
-      {/* Circuit Tree Line */}
-      <div className="absolute left-[5px] top-[14px] bottom-[14px] w-[1px] bg-[var(--foreground)]/10" />
+      {/* Circuit Tree Vertical Line */}
+      <div className="absolute left-[5px] top-[15px] bottom-[30px] w-[1px] bg-[var(--foreground)]/10" />
+
+      {/* Top Node */}
+      <div className="relative flex items-center h-4 mb-2">
+        <div className="relative z-10 w-[11px] h-[11px] rounded-full border border-[var(--foreground)]/30 bg-[var(--background)] flex items-center justify-center">
+           <div className="w-[3px] h-[3px] rounded-full bg-[var(--foreground)]/60" />
+        </div>
+      </div>
 
       {socials.map((social, index) => (
         <a 
@@ -33,30 +40,37 @@ export default function SocialOrbit() {
           href={social.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative flex items-center h-7 interactive"
+          className="group relative flex items-center h-10 interactive"
           data-cursor-text="VISIT"
         >
           {/* Node and Branch */}
           <div className="relative flex items-center h-full">
             {/* Tree Branch Horizontal Line */}
-            {index > 0 && <div className="absolute left-[5px] top-1/2 w-[10px] h-[1px] bg-[var(--foreground)]/10 group-hover:bg-[var(--foreground)]/40 transition-colors duration-500" />}
+            <div className="absolute left-[5px] top-1/2 w-[15px] h-[1px] bg-[var(--foreground)]/10 group-hover:bg-[var(--foreground)]/40 transition-colors duration-500" />
             
             {/* Main Node */}
             <div className="relative z-10 w-[11px] h-[11px] rounded-full border border-[var(--foreground)]/20 group-hover:border-[var(--foreground)]/60 bg-[var(--background)] flex items-center justify-center transition-colors duration-500">
-               <div className="w-[3px] h-[3px] rounded-full bg-[var(--foreground)]/40 group-hover:bg-[var(--foreground)] transition-colors duration-500" />
+               <div className="w-[3px] h-[3px] rounded-full bg-[var(--foreground)]/30 group-hover:bg-[var(--foreground)] transition-colors duration-500" />
             </div>
           </div>
           
-          <div className="ml-5 flex items-center gap-3 opacity-60 group-hover:opacity-100 transition-opacity duration-500">
-            <span className="text-[var(--foreground)]">
+          <div className="ml-7 flex items-center gap-4 opacity-70 group-hover:opacity-100 transition-opacity duration-500">
+            {/* Rounded Icon Box */}
+            <div className="w-6 h-6 rounded-md border border-[var(--foreground)]/20 flex items-center justify-center text-[var(--foreground)]">
               <social.icon />
-            </span>
-            <span className="font-mono text-[9px] text-[var(--foreground)] tracking-[0.15em] uppercase">
+            </div>
+            {/* Label */}
+            <span className="font-mono text-[9px] text-[var(--foreground)] tracking-[0.2em] uppercase">
               {social.name}
             </span>
           </div>
         </a>
       ))}
+
+      {/* Footer Text */}
+      <div className="mt-4 ml-5 font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase">
+        CONNECT / FOLLOW &nbsp; →
+      </div>
     </div>
   );
 }

@@ -38,60 +38,86 @@ export default function LivingCircuit() {
          
          {/* Static Base Traces */}
          <g stroke="rgba(255,255,255,0.08)" fill="none" strokeWidth="1">
-            {/* Top Left System to Social Orbit */}
-            <path d="M 5% 15% H 12% V 25% H 20%" />
-            {/* Main spanning trace running behind typography */}
-            <path d="M 0 45% H 30% V 60% H 55% V 80% H 100%" />
-            {/* Right side technical tree */}
-            <path d="M 75% 20% V 30% H 85% V 50% H 95%" />
-            <path d="M 85% 30% H 90% V 20%" />
-            {/* Bottom left tree */}
-            <path d="M 10% 90% V 75% H 25% V 65% H 40%" />
+            {/* Top Left System to MCU */}
+            <path d="M 5% 15% H 15% V 10% H 33% V 15% H 40%" />
+            {/* Top Right System */}
+            <path d="M 46% 15% H 55% L 60% 20% H 75%" />
             
-            {/* Decorative components (Vias, capacitors) */}
-            <circle cx="12%" cy="15%" r="1.5" />
-            <circle cx="12%" cy="25%" r="1.5" />
-            <circle cx="30%" cy="45%" r="2" />
-            <circle cx="30%" cy="60%" r="2" />
-            <circle cx="55%" cy="60%" r="2" />
-            <circle cx="55%" cy="80%" r="2" />
+            {/* Social connection to SENSOR */}
+            <path d="M 10% 25% H 20% V 35% H 28% V 60% H 12%" />
+            <path d="M 12% 60% H 8% V 80% H 15% V 85% H 25%" />
             
-            {/* Component pads */}
-            <rect x="73%" y="18%" width="4%" height="4%" strokeDasharray="2 2" />
-            <path d="M 23% 63% H 27% M 23% 67% H 27%" />
+            {/* SENSOR to text block links */}
+            <path d="M 8% 66% H 12%" />
+            <path d="M 8% 68% H 12%" />
+            
+            {/* MCU Box and Pins */}
+            <rect x="40%" y="12%" width="6%" height="8%" strokeDasharray="1" />
+            <path d="M 41% 12% V 10% M 43% 12% V 10% M 45% 12% V 10%" /> {/* Top Pins */}
+            <path d="M 41% 20% V 22% M 43% 20% V 22% M 45% 20% V 22%" /> {/* Bot Pins */}
+            <path d="M 40% 14% H 38% M 40% 16% H 38% M 40% 18% H 38%" /> {/* Left Pins */}
+            <path d="M 46% 14% H 48% M 46% 16% H 48% M 46% 18% H 48%" /> {/* Right Pins */}
+            
+            {/* I/O wrapper and traces (right side framing the portrait) */}
+            <path d="M 80% 30% H 85% V 38% H 95%" />
+            <path d="M 85% 38% V 48% H 95%" />
+            <rect x="90%" y="30%" width="5%" height="18%" strokeDasharray="2 2" />
+            <path d="M 85% 50% L 82% 55% H 75%" />
+
+            {/* Top Right Waveform */}
+            <path d="M 75% 15% Q 76% 10% 77% 15% T 79% 15% T 81% 15% T 83% 15% T 85% 15%" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
+            
+            {/* Bottom Right Box */}
+            <rect x="75%" y="90%" width="20%" height="5%" strokeDasharray="1 3" />
+            <path d="M 77% 92% H 78% M 77% 93% H 78%" />
+            
+            {/* Main sweeping trace behind typography */}
+            <path d="M 28% 40% H 40% V 65% H 60% V 80% H 70%" />
+
+            {/* Junction Nodes */}
+            <circle cx="15%" cy="10%" r="1.5" />
+            <circle cx="20%" cy="35%" r="1.5" />
+            <circle cx="28%" cy="60%" r="1.5" />
+            <circle cx="8%" cy="80%" r="1.5" />
+            <circle cx="60%" cy="20%" r="1.5" />
+            <circle cx="85%" cy="38%" r="1.5" />
          </g>
 
          {/* Important Traces (Slightly brighter) */}
-         <g stroke="rgba(255,255,255,0.12)" fill="none" strokeWidth="1">
-            <path d="M 12% 25% H 20%" />
-            <path d="M 75% 20% H 80%" />
-            <circle cx="20%" cy="25%" r="2" fill="rgba(255,255,255,0.12)" />
-            <circle cx="75%" cy="20%" r="2" fill="rgba(255,255,255,0.12)" />
+         <g stroke="rgba(255,255,255,0.15)" fill="none" strokeWidth="1">
+            <path d="M 15% 10% H 20%" />
+            <path d="M 60% 20% H 65%" />
+            <circle cx="20%" cy="10%" r="2" fill="rgba(255,255,255,0.15)" />
+            <circle cx="65%" cy="20%" r="2" fill="rgba(255,255,255,0.15)" />
+            <circle cx="28%" cy="40%" r="2" fill="rgba(255,255,255,0.15)" />
          </g>
 
          {/* Interactive/Glowing nodes */}
          <g>
-            <InteractiveNode cx="12%" cy="15%" mouse={mousePos} />
-            <InteractiveNode cx="30%" cy="45%" mouse={mousePos} />
-            <InteractiveNode cx="55%" cy="60%" mouse={mousePos} />
-            <InteractiveNode cx="85%" cy="30%" mouse={mousePos} />
-            <InteractiveNode cx="25%" cy="75%" mouse={mousePos} />
+            <InteractiveNode cx="15%" cy="10%" mouse={mousePos} />
+            <InteractiveNode cx="20%" cy="35%" mouse={mousePos} />
+            <InteractiveNode cx="28%" cy="60%" mouse={mousePos} />
+            <InteractiveNode cx="8%" cy="80%" mouse={mousePos} />
+            <InteractiveNode cx="60%" cy="20%" mouse={mousePos} />
+            <InteractiveNode cx="85%" cy="38%" mouse={mousePos} />
+            <InteractiveNode cx="82%" cy="55%" mouse={mousePos} />
+            <InteractiveNode cx="28%" cy="40%" mouse={mousePos} />
          </g>
          
          {/* Animated Signal Flow Traces */}
          <g stroke="rgba(255,255,255,0.45)" fill="none" strokeWidth="1.5" filter="url(#circuit-glow)">
             <path 
-              d="M 0 45% H 30% V 60% H 55% V 80% H 100%" 
+              d="M 5% 15% H 15% V 10% H 33% V 15% H 40%" 
               strokeDasharray="20 1800"
               className="animate-[signal-flow_12s_linear_infinite]"
             />
             <path 
-              d="M 75% 20% V 30% H 85% V 50% H 95%" 
+              d="M 10% 25% H 20% V 35% H 28% V 60% H 12%" 
               strokeDasharray="15 1000"
               className="animate-[signal-flow_9s_linear_infinite]"
             />
             <path 
-              d="M 10% 90% V 75% H 25% V 65% H 40%" 
+              d="M 46% 15% H 55% L 60% 20% H 75%" 
               strokeDasharray="10 800"
               className="animate-[signal-flow_15s_linear_infinite]"
             />
@@ -112,7 +138,7 @@ function InteractiveNode({ cx, cy, mouse }: { cx: string, cy: string, mouse: { x
     const dist = Math.hypot(mouse.x - x, mouse.y - y);
     
     const active = dist < 200; 
-    const opacity = active ? Math.min(0.6, Math.max(0.08, 0.6 - (dist / 200) * 0.52)) : 0.08;
+    const opacity = active ? Math.min(0.7, Math.max(0.1, 0.7 - (dist / 200) * 0.6)) : 0.1;
     const r = active ? 4 : 2;
     
     nodeRef.current.style.opacity = opacity.toString();
@@ -126,7 +152,7 @@ function InteractiveNode({ cx, cy, mouse }: { cx: string, cy: string, mouse: { x
       cy={cy} 
       r="2" 
       fill="#FAFAFA" 
-      style={{ opacity: 0.08, transition: "all 0.6s cubic-bezier(0.25, 1, 0.5, 1)" }} 
+      style={{ opacity: 0.1, transition: "all 0.6s cubic-bezier(0.25, 1, 0.5, 1)" }} 
     />
   );
 }

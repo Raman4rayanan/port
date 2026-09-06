@@ -68,38 +68,107 @@ export default function Home() {
             <LivingCircuit />
           </div>
 
-          {/* ENGINEERING VISUAL FIELD */}
-          <div className="absolute inset-0 pointer-events-none z-10 parallax-layer" data-speed="0.1">
-            <div className="absolute inset-0 opacity-[0.02]" 
-                 style={{ backgroundImage: 'linear-gradient(to right, var(--foreground) 1px, transparent 1px), linear-gradient(to bottom, var(--foreground) 1px, transparent 1px)', backgroundSize: '100px 100px' }} 
-            />
-            <div className="absolute top-[15%] left-0 w-full h-[1px] bg-[var(--foreground)]/5" />
-            <div className="absolute top-0 left-[85%] w-[1px] h-full bg-[var(--foreground)]/5 hidden md:block" />
-            
-            <div className="absolute top-[15%] left-[5%] font-mono text-[8px] text-[var(--foreground)]/20 uppercase tracking-widest -translate-y-full pb-1">
-              + 45.002 / Y.AXIS
-            </div>
-            <div className="absolute top-[85%] right-[5%] font-mono text-[8px] text-[var(--foreground)]/20 uppercase tracking-widest hidden md:block">
-              X.AXIS / 89.011 +
+          {/* ABSTRACT HARDWARE / METADATA LAYER (Layer 3) */}
+          <div 
+            className="absolute inset-0 pointer-events-none z-10 parallax-layer"
+            data-speed="0.04"
+          >
+            {/* Top Left Metadata */}
+            <div className="absolute top-[8%] left-[2%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase flex gap-2 items-center hidden lg:flex">
+              <span className="text-[var(--foreground)]">+ 45.002</span> / Y.AXIS
             </div>
 
-            {/* Scattered Hardware Nodes */}
-            <div className="absolute top-[20%] left-[65%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:block">
-              [ MCU ]
+            {/* Top Center: MCU Block */}
+            <div className="absolute top-[12%] left-[43%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:flex flex-col items-center">
+              <span className="text-[var(--foreground)] text-[10px] mb-1">MCU</span>
+              <span>ESP32</span>
+              <span>SYS/01</span>
             </div>
-            {/* Moved far left to avoid motto overlap */}
-            <div className="absolute top-[65%] left-[5%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:block">
-              [ SENSOR ]
+
+            {/* Top Right Metadata */}
+            <div className="absolute top-[10%] left-[60%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:flex flex-col gap-1">
+              <div>FIELD / ELECTRONICS</div>
+              <div>MODE / BUILD</div>
+              <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-[#00FF66] rounded-full" />
+                STATE / ACTIVE
+              </div>
             </div>
-            <div className="absolute top-[85%] right-[15%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:block">
-              [ I/O ]
+
+            {/* Far Top Right Signal Block */}
+            <div className="absolute top-[15%] right-[5%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:flex flex-col gap-1">
+              <div>SIGNAL / 03</div>
+              <div>FREQ / 1.2 kHz</div>
+              <div>MODE / ACTIVE</div>
+            </div>
+
+            {/* Center Left Ideas List */}
+            <div className="absolute top-[25%] left-[32%] font-mono text-[8px] text-[var(--muted)] opacity-60 tracking-widest uppercase hidden lg:flex flex-col gap-1">
+              <div>IDEAS</div>
+              <div>CIRCUITS</div>
+              <div>CODE</div>
+              <div>PROTOTYPES</div>
+              <div>REAL-WORLD IMPACT</div>
+            </div>
+
+            {/* Center Left Sensor Block */}
+            <div className="absolute top-[62%] left-[5%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:flex flex-col gap-1">
+              <div className="text-[var(--foreground)] mb-2">SENSOR</div>
+              <div>MQ-5</div>
+              <div>GAS</div>
+              <div>TEMP</div>
+              <div>ENV</div>
+            </div>
+
+            {/* Center Right I/O Block */}
+            <div className="absolute top-[30%] right-[5%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:flex flex-col gap-1">
+              <div className="text-[var(--foreground)] text-[10px] mb-2">I/O</div>
+              <div>GPIO / 17</div>
+              <div>TX / RX</div>
+              <div>ADC / 01</div>
+            </div>
+
+            {/* Far Right Vertical Text */}
+            <div className="absolute top-[45%] right-[2%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:block origin-center rotate-90">
+              SYSTEM / ACTIVE / 001
+            </div>
+
+            {/* Bottom Right Workflow */}
+            <div className="absolute bottom-[15%] right-[5%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:flex flex-col gap-1">
+              <div>PROTOTYPE</div>
+              <div>TEST</div>
+              <div>ITERATE</div>
+              <div>DEPLOY</div>
+            </div>
+
+            {/* Bottom Right Coordinates */}
+            <div className="absolute bottom-[5%] right-[15%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:flex items-center gap-4">
+              <div className="text-[var(--foreground)] opacity-60">+</div>
+              <div className="flex flex-col gap-1">
+                <div>98.011 / X.AXIS</div>
+                <div>-12.442 / Y.AXIS</div>
+              </div>
+            </div>
+
+            {/* Bottom Left Power Block */}
+            <div className="absolute bottom-[5%] left-[5%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:flex gap-4">
+              <div className="flex flex-col gap-1 items-center justify-center text-[var(--foreground)] opacity-40">
+                <div className="w-1 h-1 rounded-full bg-current" />
+                <div className="w-1 h-1 rounded-full bg-current" />
+                <div className="w-1 h-1 rounded-full bg-current" />
+              </div>
+              <div className="flex flex-col gap-1">
+                <div>NODE / 004</div>
+                <div>VCC / 3V3</div>
+                <div>GND</div>
+              </div>
             </div>
           </div>
 
           <section className="relative h-full w-full flex flex-col justify-between pt-32 pb-10 px-6 md:px-10">
             
-            {/* SOCIAL ORBIT MARKER */}
-            <div className="absolute top-[18%] md:top-[22%] left-[8%] md:left-[14%] z-20 parallax-layer" data-speed="0.2">
+            {/* Vertical Social Orbit */}
+            <div className="absolute top-[20%] left-[2%] z-50 mix-blend-difference hidden lg:block">
               <SocialOrbit />
             </div>
 
