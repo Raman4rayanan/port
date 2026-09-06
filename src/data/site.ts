@@ -10,8 +10,8 @@ export const siteConfig = {
   },
   contact: {
     email: "", // Intentionally left blank until provided by user
-    linkedin: "#", 
-    github: "#", 
-    instagram: "#",
+    linkedin: "https://www.linkedin.com/in/ramanarayanan-g-262a51317/",
+    github: "https://github.com/Raman4rayanan",
+    instagram: "https://www.instagram.com/chxndru.exe/",
   }
 };
