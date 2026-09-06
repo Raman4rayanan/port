@@ -48,6 +48,26 @@
     background-color: var(--foreground);
     color: var(--background);
   }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+
+@keyframes scroll-line {
+  0% { transform: translateY(-100%); }
+  50% { transform: translateY(0%); }
+  100% { transform: translateY(100%); }
 }
 
 /* Lenis Smooth Scroll Recommended CSS */
