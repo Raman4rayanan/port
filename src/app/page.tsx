@@ -12,6 +12,7 @@ import { featuredProjects } from "@/data/projects";
 import { capabilities } from "@/data/skills";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import LivingCircuit from "@/components/motion/LivingCircuit";
 import SocialOrbit from "@/components/motion/SocialOrbit";
 
 export default function Home() {
@@ -19,14 +20,14 @@ export default function Home() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    
+
     const ctx = gsap.context(() => {
       const layers = gsap.utils.toArray<HTMLElement>('.parallax-layer');
-      
+
       layers.forEach(layer => {
         const speed = parseFloat(layer.getAttribute('data-speed') || '0');
         if (speed === 0) return;
-        
+
         gsap.to(layer, {
           y: () => -(window.innerHeight * speed),
           ease: "none",
@@ -40,51 +41,169 @@ export default function Home() {
         });
       });
     }, containerRef);
-    
+
     return () => ctx.revert();
   }, []);
 
   return (
     <>
       <main ref={containerRef} className="relative z-10 bg-[var(--background)] mb-[100svh] shadow-[0_20px_50px_rgba(0,0,0,0.15)]">
-        
+
         {/* 
           ========================================
           HERO SECTION (STICKY)
           ========================================
         */}
         <div className="sticky top-0 h-[100svh] w-full z-0 overflow-hidden bg-[var(--background)]">
-          
+
           {/* GHOST TYPOGRAPHY LAYER */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden" >
-            <div className="font-display font-black text-[30vw] leading-none tracking-tighter text-[var(--foreground)] opacity-[0.03] select-none">
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden parallax-layer" data-speed="0.05">
+            <div className="font-display font-black text-[30vw] leading-none tracking-tighter text-[var(--foreground)] opacity-[0.03] select-none mix-blend-overlay">
               SYSTEM
             </div>
           </div>
 
-          {/* TOP LEFT METADATA */}
-          <div className="absolute top-[8%] left-[3%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:block">
-            + 45.002 / Y.AXIS
+          {/* LIVING CIRCUIT LAYER */}
+          <div className="absolute inset-0 pointer-events-none z-10 parallax-layer" data-speed="0.15">
+            <LivingCircuit />
           </div>
 
-          <section className="relative h-full w-full flex flex-col justify-between pt-28 pb-10 px-6 md:px-10">
-            
-            {/* Social Links — top left, fully clickable */}
-            <div className="absolute top-[18%] left-[3%] z-50 hidden lg:block">
+          {/* ABSTRACT HARDWARE / METADATA LAYER (Layer 3) */}
+          <div
+            className="absolute inset-0 pointer-events-none z-10 parallax-layer"
+            data-speed="0.04"
+          >
+            {/* Top Left Metadata */}
+            <div className="absolute top-[8%] left-[2%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase flex gap-2 items-center hidden lg:flex">
+              <span className="text-[var(--foreground)]">+ 45.002</span> / Y.AXIS
+            </div>
+
+            {/* Top Center: MCU Block */}
+            <div className="absolute top-[12%] left-[43%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:flex flex-col items-center">
+              <span className="text-[var(--foreground)] text-[10px] mb-1">MCU</span>
+              <span>ESP32</span>
+              <span>SYS/01</span>
+            </div>
+
+            {/* Top Right Metadata */}
+            <div className="absolute top-[10%] left-[60%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:flex flex-col gap-1">
+              <div>FIELD / ELECTRONICS</div>
+              <div>MODE / BUILD</div>
+              <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-[#00FF66] rounded-full" />
+                STATE / ACTIVE
+              </div>
+            </div>
+
+            {/* Far Top Right Signal Block */}
+            <div className="absolute top-[15%] right-[5%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:flex flex-col gap-1">
+              <div>SIGNAL / 03</div>
+              <div>FREQ / 1.2 kHz</div>
+              <div>MODE / ACTIVE</div>
+            </div>
+
+            {/* Center Left Ideas List */}
+            <div className="absolute top-[25%] left-[32%] font-mono text-[8px] text-[var(--muted)] opacity-60 tracking-widest uppercase hidden lg:flex flex-col gap-1">
+              <div>IDEAS</div>
+              <div>CIRCUITS</div>
+              <div>CODE</div>
+              <div>PROTOTYPES</div>
+              <div>REAL-WORLD IMPACT</div>
+            </div>
+
+            {/* Center Left Sensor Block */}
+            <div className="absolute top-[62%] left-[5%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:flex flex-col gap-1">
+              <div className="text-[var(--foreground)] mb-2">SENSOR</div>
+              <div>MQ-5</div>
+              <div>GAS</div>
+              <div>TEMP</div>
+              <div>ENV</div>
+            </div>
+
+            {/* Center Right I/O Block */}
+            <div className="absolute top-[30%] right-[5%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:flex flex-col gap-1">
+              <div className="text-[var(--foreground)] text-[10px] mb-2">I/O</div>
+              <div>GPIO / 17</div>
+              <div>TX / RX</div>
+              <div>ADC / 01</div>
+            </div>
+
+            {/* Far Right Vertical Text */}
+            <div className="absolute top-[45%] right-[2%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:block origin-center rotate-90">
+              SYSTEM / ACTIVE / 001
+            </div>
+
+            {/* Bottom Right Workflow */}
+            <div className="absolute bottom-[15%] right-[5%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:flex flex-col gap-1">
+              <div>PROTOTYPE</div>
+              <div>TEST</div>
+              <div>ITERATE</div>
+              <div>DEPLOY</div>
+            </div>
+
+            {/* Bottom Right Coordinates */}
+            <div className="absolute bottom-[5%] right-[15%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:flex items-center gap-4">
+              <div className="text-[var(--foreground)] opacity-60">+</div>
+              <div className="flex flex-col gap-1">
+                <div>98.011 / X.AXIS</div>
+                <div>-12.442 / Y.AXIS</div>
+              </div>
+            </div>
+
+            {/* Bottom Left Power Block */}
+            <div className="absolute bottom-[5%] left-[5%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:flex gap-4">
+              <div className="flex flex-col gap-1 items-center justify-center text-[var(--foreground)] opacity-40">
+                <div className="w-1 h-1 rounded-full bg-current" />
+                <div className="w-1 h-1 rounded-full bg-current" />
+                <div className="w-1 h-1 rounded-full bg-current" />
+              </div>
+              <div className="flex flex-col gap-1">
+                <div>NODE / 004</div>
+                <div>VCC / 3V3</div>
+                <div>GND</div>
+              </div>
+            </div>
+          </div>
+
+          <section className="relative h-full w-full flex flex-col justify-between pt-32 pb-10 px-6 md:px-10">
+
+            {/* Vertical Social Orbit — z-50, pointer-events fully enabled */}
+            <div className="absolute top-[20%] left-[2%] z-50 hidden lg:block">
+              {/* SVG connector trace from social orbit into main circuit */}
+              <svg
+                className="absolute -right-8 top-[20px] pointer-events-none"
+                width="40" height="120"
+                overflow="visible"
+              >
+                <path
+                  d="M 0 0 H 20 V 80 H 40"
+                  stroke="rgba(255,255,255,0.10)"
+                  fill="none"
+                  strokeWidth="1"
+                />
+                <circle cx="0" cy="0" r="2" fill="rgba(255,255,255,0.2)" />
+                <circle cx="40" cy="80" r="2" fill="rgba(255,255,255,0.2)" />
+              </svg>
               <SocialOrbit />
             </div>
 
+            {/* VERTICAL SYSTEM LABEL */}
+            <div className="absolute top-1/2 right-[4%] md:right-[6%] -translate-y-1/2 flex items-center justify-center z-10 parallax-layer hidden md:flex" data-speed="0.25">
+              <div className="font-mono text-[10px] text-[var(--muted)] tracking-[0.3em] uppercase" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
+                SYSTEM / ACTIVE / 001
+              </div>
+            </div>
 
             <div className="relative z-20 w-full h-full flex flex-col md:flex-row justify-between items-center md:items-end gap-10 flex-1 px-0 md:px-12 lg:px-20 pb-20">
-              
+
               {/* Typography Layer */}
               <div className="flex flex-col gap-6 w-full md:w-1/2 parallax-layer z-30 pb-10 md:pb-24" data-speed="0.4">
                 <h1 className="font-display text-[clamp(3.5rem,7.5vw,9rem)] leading-[0.8] font-black tracking-tighter uppercase relative">
                   <TextReveal delay={0.1}>{siteConfig.shortName}</TextReveal>
                 </h1>
-                
+
                 <FadeIn delay={0.3} className="font-sans text-[10px] md:text-xs text-[var(--muted)] leading-relaxed mt-2 uppercase tracking-[0.2em]">
-                  {siteConfig.identity.field} <br/>
+                  {siteConfig.identity.field} <br />
                   {siteConfig.identity.primary}
                 </FadeIn>
 
@@ -98,20 +217,25 @@ export default function Home() {
               {/* Profile Image Layer (Larger scale, anchors composition) */}
               <div className="w-full md:w-5/12 h-[55vh] md:h-[75vh] relative group interactive parallax-layer z-20" data-cursor-text="EXPLORE" data-speed="0.2">
                 <Link href="/about" className="block w-full h-full relative">
-                  <ParallaxImage 
-                    src="/profile.png" 
-                    alt={`${siteConfig.name} - Profile`} 
+                  <ParallaxImage
+                    src="/profile.png"
+                    alt={`${siteConfig.name} - Profile`}
                     speed={0.1}
                     className="rounded-sm"
                     imageClassName="group-hover:scale-[1.05] transition-transform duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)] scale-[1.12] origin-bottom"
                   />
+
+                  {/* Image Metadata */}
+                  <div className="absolute -bottom-8 -left-8 font-mono text-[10px] text-[var(--muted)] rotate-[-90deg] origin-top-left tracking-widest uppercase px-2 bg-[var(--background)]">
+                    IMG_01 / SYS.ACTIVE
+                  </div>
                 </Link>
               </div>
             </div>
 
             {/* Bottom bar & Scroll indicator */}
             <FadeIn delay={0.6} className="relative z-30 flex justify-between items-end mt-16 w-full pt-6">
-              
+
               {/* Animated Scroll Indicator */}
               <div className="flex flex-col items-center gap-4 parallax-layer" data-speed="0.1">
                 <div className="font-mono text-[9px] text-[var(--muted)] uppercase tracking-widest" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
@@ -121,7 +245,7 @@ export default function Home() {
                   <div className="w-full h-full bg-[var(--foreground)] absolute top-0 left-0 animate-[scroll-line_2s_ease-in-out_infinite]" />
                 </div>
               </div>
-              
+
             </FadeIn>
           </section>
         </div>
@@ -132,7 +256,7 @@ export default function Home() {
           ========================================
         */}
         <div className="relative z-10 bg-[var(--background)]">
-          
+
           {/* IDENTITY SECTION */}
           <section className="relative min-h-screen w-full py-20 px-6 md:px-10 border-t border-[var(--foreground)]/10 flex flex-col justify-center">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 justify-between items-start w-full">
@@ -179,11 +303,11 @@ export default function Home() {
                 {featuredProjects.map((project, index) => (
                   <div key={project.id} className="py-16 md:py-24 border-b border-zinc-800 flex flex-col md:flex-row justify-between items-start gap-10 relative overflow-hidden group">
                     <div className="absolute inset-0 bg-zinc-900 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] z-0" />
-                    
+
                     <div className="relative z-10 font-mono text-sm text-zinc-500 w-full md:w-auto">
                       0{index + 1}
                     </div>
-                    
+
                     <div className="relative z-10 flex flex-col gap-6 w-full md:w-1/2">
                       <h3 className="font-display text-[clamp(2rem,4vw,4rem)] font-bold uppercase tracking-tighter leading-none">
                         {project.title.split(' ').map((word, i) => <span key={i} className="block">{word}</span>)}
@@ -215,26 +339,26 @@ export default function Home() {
 
                 {/* ARCHIVE IN PROGRESS */}
                 <div className="py-16 md:py-24 border-b border-zinc-800 flex flex-col md:flex-row justify-between items-start gap-10 relative overflow-hidden group">
-                    <div className="absolute inset-0 bg-zinc-900/50 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] z-0" />
-                    
-                    <div className="relative z-10 font-mono text-sm text-zinc-600 w-full md:w-auto">
-                      03 / EXPERIMENTS
-                    </div>
-                    
-                    <div className="relative z-10 flex flex-col gap-6 w-full md:w-1/2">
-                      <p className="font-sans text-xl text-zinc-500 italic max-w-md">
-                        A growing archive of smaller electronics experiments, prototypes and technical explorations.
-                      </p>
-                    </div>
+                  <div className="absolute inset-0 bg-zinc-900/50 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] z-0" />
 
-                    <div className="relative z-10 w-full md:w-1/4 flex justify-end md:items-end h-full mt-10 md:mt-0">
-                      <MagneticLink>
-                        <Link href="/work" className="font-mono text-sm uppercase tracking-widest text-zinc-500 hover:text-white transition-colors interactive">
-                          ARCHIVE IN PROGRESS &rarr;
-                        </Link>
-                      </MagneticLink>
-                    </div>
+                  <div className="relative z-10 font-mono text-sm text-zinc-600 w-full md:w-auto">
+                    03 / EXPERIMENTS
                   </div>
+
+                  <div className="relative z-10 flex flex-col gap-6 w-full md:w-1/2">
+                    <p className="font-sans text-xl text-zinc-500 italic max-w-md">
+                      A growing archive of smaller electronics experiments, prototypes and technical explorations.
+                    </p>
+                  </div>
+
+                  <div className="relative z-10 w-full md:w-1/4 flex justify-end md:items-end h-full mt-10 md:mt-0">
+                    <MagneticLink>
+                      <Link href="/work" className="font-mono text-sm uppercase tracking-widest text-zinc-500 hover:text-white transition-colors interactive">
+                        ARCHIVE IN PROGRESS &rarr;
+                      </Link>
+                    </MagneticLink>
+                  </div>
+                </div>
               </div>
 
               <FadeIn className="mt-20 flex justify-end">
@@ -269,7 +393,7 @@ export default function Home() {
                     I’m currently exploring ideas around intelligent hardware systems, embedded automation, connected devices and practical product development.
                   </p>
                   <p className="font-mono text-sm uppercase tracking-widest text-[var(--foreground)]">
-                    The goal is simple:<br/><br/>
+                    The goal is simple:<br /><br />
                     Build. Test. Break. Improve. Repeat.
                   </p>
                 </div>
@@ -282,7 +406,7 @@ export default function Home() {
             <FadeIn className="font-mono text-xs tracking-widest text-zinc-500 mb-10 px-6 md:px-10 uppercase absolute top-10 left-0">
               [ 03 / CAPABILITIES ]
             </FadeIn>
-            
+
             <div className="relative flex overflow-x-hidden group w-full mt-20">
               <div className="flex whitespace-nowrap animate-marquee group-hover:[animation-play-state:paused]">
                 {/* We map capabilities 3 times so the marquee has plenty of width to seamlessly loop back at -50% */}
@@ -298,10 +422,10 @@ export default function Home() {
           {/* INNOVATIONS */}
           <section className="relative min-h-screen w-full py-20 px-6 md:px-10 flex flex-col justify-center border-t border-[var(--foreground)]/10 overflow-hidden">
             {/* Subtle schematic grid background */}
-            <div className="absolute inset-0 pointer-events-none opacity-[0.05] z-0" 
-                 style={{ backgroundImage: 'linear-gradient(to right, #000 2px, transparent 2px), linear-gradient(to bottom, #000 2px, transparent 2px)', backgroundSize: '100px 100px' }} 
+            <div className="absolute inset-0 pointer-events-none opacity-[0.05] z-0"
+              style={{ backgroundImage: 'linear-gradient(to right, #000 2px, transparent 2px), linear-gradient(to bottom, #000 2px, transparent 2px)', backgroundSize: '100px 100px' }}
             />
-            
+
             <div className="max-w-7xl mx-auto w-full relative z-10">
               <div className="w-full flex flex-col md:flex-row justify-between items-start gap-10">
                 <div className="w-full md:w-3/5">
@@ -309,11 +433,11 @@ export default function Home() {
                     [ 04 / INNOVATION ]
                   </FadeIn>
                   <h2 className="font-display text-[clamp(3rem,6vw,6rem)] font-medium tracking-tight leading-tight">
-                    BUILDING BEYOND <br/>
+                    BUILDING BEYOND <br />
                     <span className="italic text-[var(--muted)]">THE OBVIOUS.</span>
                   </h2>
                 </div>
-                
+
                 <div className="w-full md:w-2/5 mt-10 md:mt-0 flex flex-col gap-6">
                   <FadeIn delay={0.2}>
                     <p className="font-sans text-[var(--muted)] text-lg">
@@ -345,36 +469,36 @@ export default function Home() {
           {/* ABOUT / ARCHIVE */}
           <section className="relative min-h-screen w-full py-20 px-6 md:px-10 flex flex-col justify-center border-t border-[var(--foreground)]/10">
             <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row gap-10">
-              
+
               {/* Archive Header / 3D Resume Preview */}
               <div className="w-full md:w-1/3 flex flex-col gap-10">
                 <FadeIn className="font-mono text-xs tracking-widest text-[var(--muted)] uppercase">
                   [ 05 / ARCHIVE ]
                 </FadeIn>
-                
+
                 <FadeIn delay={0.2} className="relative w-full max-w-[280px] aspect-[1/1.4] group hidden md:block" style={{ perspective: '1000px' }}>
                   <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="block w-full h-full relative transition-transform duration-700 transform-style-3d group-hover:rotate-y-[-10deg] group-hover:rotate-x-[5deg] group-hover:scale-105 interactive" data-cursor-text="OPEN RESUME">
-                    
+
                     {/* 3D Paper Document Effect */}
                     <div className="absolute inset-0 bg-white shadow-[20px_20px_40px_rgba(0,0,0,0.1)] border border-zinc-200 p-6 flex flex-col opacity-90 group-hover:opacity-100 transition-all duration-700 bg-[linear-gradient(to_bottom,transparent_0px,transparent_calc(100%_-_1px),#f4f4f5_calc(100%_-_1px))] bg-[length:100%_16px]">
-                      
+
                       {/* Fake resume skeleton */}
                       <div className="w-full border-b-2 border-zinc-900 pb-2 mb-4">
                         <div className="w-2/3 h-4 bg-zinc-900 mb-2 rounded-sm"></div>
                         <div className="w-1/3 h-2 bg-zinc-400 rounded-sm"></div>
                       </div>
-                      
+
                       <div className="w-1/2 h-3 bg-zinc-300 mb-4 rounded-sm"></div>
                       <div className="w-full h-2 bg-zinc-200 mb-2 rounded-sm"></div>
                       <div className="w-full h-2 bg-zinc-200 mb-2 rounded-sm"></div>
                       <div className="w-4/5 h-2 bg-zinc-200 mb-6 rounded-sm"></div>
-                      
+
                       <div className="w-1/3 h-3 bg-zinc-300 mb-4 rounded-sm"></div>
                       <div className="w-full h-2 bg-zinc-200 mb-2 rounded-sm"></div>
                       <div className="w-11/12 h-2 bg-zinc-200 mb-2 rounded-sm"></div>
                       <div className="w-full h-2 bg-zinc-200 mb-2 rounded-sm"></div>
                     </div>
-                    
+
                     <div className="absolute -bottom-4 -right-4 bg-[var(--foreground)] text-[var(--background)] font-mono text-[10px] px-3 py-1 uppercase tracking-widest shadow-xl transition-transform duration-700 group-hover:translate-x-2 group-hover:translate-y-2">
                       VIEW RESUME &nearr;
                     </div>
@@ -394,7 +518,7 @@ export default function Home() {
                     From electronics and embedded systems to software and product development, I’m constantly experimenting with how different technologies can work together.
                   </FadeIn>
                 </div>
-                
+
                 <FadeIn delay={0.4} className="flex flex-col md:flex-row gap-8 font-mono text-sm tracking-widest uppercase">
                   <Link href="/innovations" className="hover:text-[var(--accent)] transition-colors interactive">INNOVATIONS &rarr;</Link>
                 </FadeIn>
@@ -416,10 +540,10 @@ export default function Home() {
             [ 06 / INITIATE ]
           </FadeIn>
           <h2 className="font-display text-[clamp(4rem,10vw,12rem)] font-black uppercase tracking-tighter text-center leading-[0.85] text-[#09090B] w-full max-w-6xl">
-            <TextReveal>HAVE AN IDEA?</TextReveal><br/>
+            <TextReveal>HAVE AN IDEA?</TextReveal><br />
             <TextReveal delay={0.1}>LET&apos;S BUILD IT.</TextReveal>
           </h2>
-          
+
           <FadeIn delay={0.3} className="mt-16 font-sans text-xl md:text-2xl text-[#09090B]/70 text-center max-w-xl">
             Have a project, technical idea, collaboration or problem worth exploring? Let&apos;s talk.
           </FadeIn>

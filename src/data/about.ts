@@ -1,7 +1,7 @@
 export const aboutIdentity = {
   headline: "ABOUT ME",
   statement: "I BUILD.\nI EXPERIMENT.\nI ITERATE.",
-  description: "I'm Ramanarayanan G, an Electronics & Communication Engineering student interested in the space where hardware, software and ideas become real products.",
+  description: "I'm Ramanarayanan G, an Electronics & Communication Engineering student who likes understanding how things work — and then trying to build them myself.",
   metadata: {
     id: "IMG_01 / PORTRAIT",
     field: "FIELD / ELECTRONICS",
