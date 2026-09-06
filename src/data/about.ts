@@ -12,23 +12,23 @@ export const aboutIdentity = {
 export const profileRows = [
   {
     id: "01",
-    title: "WHO I AM",
-    content: "I'm an Electronics & Communication Engineering student who enjoys understanding how systems work and turning ideas into physical, working prototypes."
+    title: "CURIOUS BY DEFAULT",
+    content: "I've always been the kind of person who wants to know what's behind the thing.\n\nHow it works.\nWhy it works.\nWhat happens if I change it.\n\nThat curiosity has shaped the way I learn, create and see the world."
   },
   {
     id: "02",
-    title: "WHAT I BUILD",
-    content: "Embedded systems, IoT devices, electronics prototypes, robotics, software tools and product-oriented engineering projects."
+    title: "FROM IDEA TO PROTOTYPE",
+    content: "I build embedded systems, IoT devices and robotics projects — usually starting with a rough idea and ending with something I can actually test, break and improve."
   },
   {
     id: "03",
-    title: "HOW I THINK",
-    content: "I prefer understanding the problem first, breaking it into smaller parts, testing assumptions and iterating until the system actually works."
+    title: "BUILD. BREAK. REPEAT.",
+    content: "I start with the problem, not the technology.\n\nBreak it down.\nBuild something.\nTest it.\nFind what fails.\nTry again.\n\nMost of what I learn comes from making things work — and figuring out why they didn't."
   },
   {
     id: "04",
-    title: "WHAT I'M LEARNING",
-    content: "Advanced embedded systems, IoT architecture, robotics, software development, system design and product development."
+    title: "WHAT'S NEXT",
+    content: "Going deeper into embedded systems, intelligent devices, robotics and product development — while learning how to turn working prototypes into things that are genuinely useful."
   }
 ];
 
@@ -54,19 +54,30 @@ export const engineeringProfile = [
   {
     category: "SOFTWARE",
     items: [
-      { name: "C / C++", annotation: "FIRMWARE / RTOS / DRIVERS" },
+      { name: "C / Embedded C", annotation: "FIRMWARE / RTOS / DRIVERS" },
       { name: "Python", annotation: "DATA / SCRIPTING / BACKEND" },
       { name: "Web Technologies", annotation: "REACT / NEXT.JS / UI" },
-      { name: "System Development", annotation: "ARCHITECTURE / INTEGRATION" }
+      { name: "MATLAB", annotation: "MODELING / SIMULATION" }
     ]
   }
 ];
 
 export const currentlyBuilding = {
   tag: "CURRENTLY BUILDING / 001",
-  mantra: "BUILD\nTEST\nITERATE",
-  description: "A look into the systems, prototypes and experiments currently occupying my workbench.",
-  image: "/workspace-placeholder.jpg"
+  index: "01",
+  title: "SMART LPG\nDUAL-SLEEVE",
+  subtitle: "HOSE MONITORING SYSTEM",
+  description: "Early leak detection. Automatic shutoff.\nMaximum safety for your home.",
+  tags: ["GAS SAFETY", "IoT", "EMBEDDED"],
+  features: [
+    { icon: "search", label: "CONTINUOUS\nMONITORING" },
+    { icon: "shield", label: "AUTOMATIC\nSHUTOFF" },
+    { icon: "bell", label: "INSTANT\nALERTS" },
+    { icon: "home", label: "ENHANCED\nSAFETY" },
+  ],
+  cta: "VIEW PROJECT",
+  ctaHref: "#",
+  image: "/gas1.png"
 };
 
 export const timeline = [
@@ -80,7 +91,7 @@ export const timeline = [
   },
   {
     year: "2022",
-    event: "[ ADD EDUCATION / START ]"
+    event: "VELAMMAL VIDHYASHRAM \nHIGHER SECONDARY EDUCATION \nGUDUVANCHERY / CHENGALPATTU"
   }
 ];
 

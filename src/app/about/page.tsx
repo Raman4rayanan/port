@@ -188,8 +188,12 @@ export default function AboutPage() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
                   >
-                    <div className="pb-12 pl-[3.5rem] md:pl-[6.5rem] pr-6 font-sans text-lg md:text-xl text-[var(--muted)] max-w-3xl leading-relaxed">
-                      {row.content}
+                    <div className="pb-12 pl-[3.5rem] md:pl-[6.5rem] pr-6 font-sans text-lg md:text-xl text-[var(--muted)] max-w-3xl leading-relaxed flex flex-col gap-1">
+                      {row.content.split('\n').map((line, i) => (
+                        line === '' 
+                          ? <br key={i} />
+                          : <span key={i}>{line}</span>
+                      ))}
                     </div>
                   </motion.div>
                 )}
@@ -241,40 +245,100 @@ export default function AboutPage() {
         SECTION 04 — CURRENTLY BUILDING
         ==================================================
       */}
-      <section className="relative w-full py-32 px-6 md:px-10 border-b border-[var(--foreground)]/10 overflow-hidden">
-        <FadeIn className="font-mono text-xs tracking-widest text-[var(--muted)] mb-20 uppercase max-w-7xl mx-auto w-full block">
-          [ 04 / CURRENTLY BUILDING ]
-        </FadeIn>
+      <section className="relative w-full border-b border-[var(--foreground)]/10 overflow-hidden bg-[#0a0a0a]">
+        {/* Full-bleed image with dark overlay */}
+        <div className="relative w-full h-[70vh] md:h-[85vh] overflow-hidden">
+          <img
+            src={currentlyBuilding.image}
+            alt={currentlyBuilding.subtitle}
+            className="w-full h-full object-cover scale-[1.05] parallax-img"
+            data-speed="0.08"
+          />
+          {/* Dark gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/30" />
 
-        <div className="max-w-7xl mx-auto w-full flex flex-col gap-10">
-          {/* Large Editorial Image */}
-          <div className="w-full h-[50vh] md:h-[80vh] relative overflow-hidden group border border-[var(--foreground)]/10 bg-[var(--foreground)]/5">
-            <img
-              src={currentlyBuilding.image}
-              alt="Workspace"
-              className="w-full h-full object-cover parallax-img scale-[1.1] opacity-80 group-hover:opacity-100 transition-opacity duration-1000"
-              data-speed="0.1"
-            />
+          {/* TOP BAR */}
+          <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-6 md:px-10 pt-6 md:pt-8">
+            <div className="flex items-center gap-3 font-mono text-[9px] text-white/50 tracking-[0.25em] uppercase">
+              <span>{currentlyBuilding.index}</span>
+              <span className="text-white/20">/</span>
+              <span>CURRENTLY BUILDING</span>
+            </div>
+            <div className="hidden md:flex items-center gap-4 font-mono text-[9px] text-white/40 tracking-[0.2em] uppercase">
+              {currentlyBuilding.tags.map((t, i) => (
+                <span key={i} className="flex items-center gap-4">
+                  {i > 0 && <span className="text-white/20">/</span>}
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
 
-            {/* If the image doesn't load/is placeholder, show a structural overlay */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <span className="font-mono text-[10px] text-[var(--muted)] tracking-widest uppercase mix-blend-difference">
-                SYS.VIEW / WORKSPACE_FEED
+          {/* MAIN CONTENT — bottom left */}
+          <div className="absolute bottom-0 left-0 right-0 px-6 md:px-10 pb-6 md:pb-8 flex flex-col md:flex-row items-end justify-between gap-6">
+            
+            {/* Left: Title block */}
+            <div className="flex flex-col gap-3 max-w-lg">
+              <h2 className="font-display font-black text-[clamp(2.5rem,6vw,5rem)] leading-[0.85] tracking-tighter uppercase text-white whitespace-pre-line">
+                {currentlyBuilding.title}
+              </h2>
+              <p className="font-sans text-base md:text-lg text-white/60 uppercase tracking-widest font-light">
+                {currentlyBuilding.subtitle}
+              </p>
+              <div className="w-8 h-[1px] bg-white/30 my-1" />
+              <p className="font-sans text-sm md:text-base text-white/50 leading-relaxed whitespace-pre-line">
+                {currentlyBuilding.description}
+              </p>
+            </div>
+
+            {/* Right: CTA */}
+            <a
+              href={currentlyBuilding.ctaHref}
+              className="group hidden md:flex items-center gap-3 font-mono text-[10px] text-white tracking-[0.25em] uppercase border border-white/30 hover:border-white/70 px-5 py-3 transition-all duration-300 flex-shrink-0 relative"
+            >
+              {/* Corner brackets */}
+              <span className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/60" />
+              <span className="absolute top-0 right-0 w-2 h-2 border-t border-r border-white/60" />
+              <span className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/60" />
+              <span className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/60" />
+              {currentlyBuilding.cta}
+              <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+            </a>
+          </div>
+        </div>
+
+        {/* BOTTOM FEATURE BAR */}
+        <div className="flex flex-col md:flex-row items-stretch border-t border-white/10">
+          {currentlyBuilding.features.map((feature, i) => (
+            <div
+              key={i}
+              className={`flex-1 flex items-center gap-4 px-6 py-5 ${i < currentlyBuilding.features.length - 1 ? 'border-b md:border-b-0 md:border-r border-white/10' : ''}`}
+            >
+              {/* Minimal icon */}
+              <div className="text-white/30 flex-shrink-0">
+                {feature.icon === 'search' && (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                )}
+                {feature.icon === 'shield' && (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                )}
+                {feature.icon === 'bell' && (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                )}
+                {feature.icon === 'home' && (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+                )}
+              </div>
+              <span className="font-mono text-[9px] text-white/40 tracking-[0.2em] uppercase whitespace-pre-line leading-relaxed">
+                {feature.label}
               </span>
             </div>
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-between items-start gap-10 mt-6">
-            <div className="flex flex-col gap-4 font-mono text-[10px] text-[var(--foreground)] tracking-[0.2em] uppercase w-full md:w-1/3">
-              <span>{currentlyBuilding.tag}</span>
-              <div className="h-[1px] w-12 bg-[var(--foreground)]/20" />
-              <span className="whitespace-pre-line leading-loose text-[var(--muted)]">{currentlyBuilding.mantra}</span>
-            </div>
-
-            <div className="font-sans text-xl md:text-2xl text-[var(--muted)] max-w-xl w-full md:w-2/3 md:text-right leading-relaxed">
-              {currentlyBuilding.description}
-            </div>
-          </div>
+          ))}
+          {/* Mobile CTA */}
+          <a href={currentlyBuilding.ctaHref} className="md:hidden flex items-center justify-between px-6 py-5 border-t border-white/10 font-mono text-[9px] text-white/60 tracking-widest uppercase">
+            {currentlyBuilding.cta} <span>→</span>
+          </a>
         </div>
       </section>
 
