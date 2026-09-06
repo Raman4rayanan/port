@@ -14,9 +14,10 @@ interface FadeInProps {
   className?: string;
   delay?: number;
   y?: number;
+  style?: React.CSSProperties;
 }
 
-export default function FadeIn({ children, className, delay = 0, y = 30 }: FadeInProps) {
+export default function FadeIn({ children, className, delay = 0, y = 30, style }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -48,7 +49,7 @@ export default function FadeIn({ children, className, delay = 0, y = 30 }: FadeI
   }, [delay, y]);
 
   return (
-    <div ref={ref} className={cn("will-change-transform opacity-0", className)}>
+    <div ref={ref} className={cn("will-change-transform opacity-0", className)} style={style}>
       {children}
     </div>
   );
