@@ -84,13 +84,14 @@ export default function Home() {
             </div>
 
             {/* Scattered Hardware Nodes */}
-            <div className="absolute top-[20%] left-[70%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:block">
+            <div className="absolute top-[20%] left-[65%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:block">
               [ MCU ]
             </div>
-            <div className="absolute top-[65%] left-[25%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:block">
+            {/* Moved far left to avoid motto overlap */}
+            <div className="absolute top-[65%] left-[5%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:block">
               [ SENSOR ]
             </div>
-            <div className="absolute top-[85%] left-[75%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:block">
+            <div className="absolute top-[85%] right-[15%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:block">
               [ I/O ]
             </div>
           </div>
@@ -123,9 +124,9 @@ export default function Home() {
                 </FadeIn>
 
                 {/* Motto */}
-                <FadeIn delay={0.4} className="mt-8 md:mt-12 font-serif text-[clamp(1.5rem,3vw,2.5rem)] text-[var(--foreground)] max-w-lg leading-[1.3] flex flex-col gap-3">
-                  <span className="opacity-60">Curious by default.</span>
-                  <span className="opacity-90 font-medium">Building by choice.</span>
+                <FadeIn delay={0.4} className="mt-8 md:mt-12 font-serif text-[clamp(1.5rem,3vw,2.5rem)] text-[var(--foreground)] max-w-lg leading-[1.3] flex flex-col gap-3 relative z-30">
+                  <span className="opacity-50">Curious by default.</span>
+                  <span className="opacity-100 font-semibold">Building by choice.</span>
                 </FadeIn>
               </div>
 

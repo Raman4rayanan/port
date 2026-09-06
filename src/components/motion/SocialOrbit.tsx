@@ -23,28 +23,38 @@ export default function SocialOrbit() {
   ];
 
   return (
-    <div className="flex flex-col gap-6 pointer-events-auto">
-      {socials.map((social) => (
+    <div className="relative flex flex-col pointer-events-auto">
+      {/* Circuit Tree Line */}
+      <div className="absolute left-[5px] top-[14px] bottom-[14px] w-[1px] bg-[var(--foreground)]/10" />
+
+      {socials.map((social, index) => (
         <a 
           key={social.name}
           href={social.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center gap-4 interactive"
+          className="group relative flex items-center h-7 interactive"
           data-cursor-text="VISIT"
         >
-          {/* Tech marker */}
-          <div className="relative flex items-center justify-center w-6 h-6">
-            <div className="absolute inset-0 border border-[var(--foreground)]/10 group-hover:border-[var(--foreground)]/40 transition-colors duration-500 rounded-sm" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[3px] h-[3px] bg-[var(--foreground)]/30 group-hover:bg-transparent transition-colors duration-500 rounded-full" />
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-[var(--foreground)]">
-              <social.icon />
+          {/* Node and Branch */}
+          <div className="relative flex items-center h-full">
+            {/* Tree Branch Horizontal Line */}
+            {index > 0 && <div className="absolute left-[5px] top-1/2 w-[10px] h-[1px] bg-[var(--foreground)]/10 group-hover:bg-[var(--foreground)]/40 transition-colors duration-500" />}
+            
+            {/* Main Node */}
+            <div className="relative z-10 w-[11px] h-[11px] rounded-full border border-[var(--foreground)]/20 group-hover:border-[var(--foreground)]/60 bg-[var(--background)] flex items-center justify-center transition-colors duration-500">
+               <div className="w-[3px] h-[3px] rounded-full bg-[var(--foreground)]/40 group-hover:bg-[var(--foreground)] transition-colors duration-500" />
             </div>
           </div>
           
-          <span className="font-mono text-[9px] text-[var(--muted)] group-hover:text-[var(--foreground)] tracking-[0.2em] uppercase transition-colors duration-500 overflow-hidden w-0 group-hover:w-20 opacity-0 group-hover:opacity-100 whitespace-nowrap">
-            {social.name}
-          </span>
+          <div className="ml-5 flex items-center gap-3 opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+            <span className="text-[var(--foreground)]">
+              <social.icon />
+            </span>
+            <span className="font-mono text-[9px] text-[var(--foreground)] tracking-[0.15em] uppercase">
+              {social.name}
+            </span>
+          </div>
         </a>
       ))}
     </div>
