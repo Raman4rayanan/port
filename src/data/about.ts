@@ -63,12 +63,6 @@ export const engineeringProfile = [
 ];
 
 export const currentlyBuilding = {
-  tag: "CURRENTLY BUILDING / 001",
-  index: "01",
-  title: "SMART LPG\nDUAL-SLEEVE",
-  subtitle: "HOSE MONITORING SYSTEM",
-  description: "Early leak detection. Automatic shutoff.\nMaximum safety for your home.",
-  tags: ["GAS SAFETY", "IoT", "EMBEDDED"],
   features: [
     { icon: "search", label: "CONTINUOUS\nMONITORING" },
     { icon: "shield", label: "AUTOMATIC\nSHUTOFF" },
@@ -83,14 +77,11 @@ export const currentlyBuilding = {
 export const timeline = [
   {
     year: "2026",
-    event: "[ ADD FUTURE EVENT / LAUNCH ]"
+    event: "QUALITY ENGINEERING INTERN\nTVS SENSING SOLUTION\nFIRST INDUSTRY EXPERIENCE"
   },
+
   {
     year: "2024",
-    event: "[ ADD EXPERIENCE / PROJECT ]"
-  },
-  {
-    year: "2022",
     event: "VELAMMAL VIDHYASHRAM \nHIGHER SECONDARY EDUCATION \nGUDUVANCHERY / CHENGALPATTU"
   }
 ];

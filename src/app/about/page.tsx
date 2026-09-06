@@ -246,66 +246,14 @@ export default function AboutPage() {
         ==================================================
       */}
       <section className="relative w-full border-b border-[var(--foreground)]/10 overflow-hidden bg-[#0a0a0a]">
-        {/* Full-bleed image with dark overlay */}
+        {/* Full-bleed image */}
         <div className="relative w-full h-[70vh] md:h-[85vh] overflow-hidden">
           <img
             src={currentlyBuilding.image}
-            alt={currentlyBuilding.subtitle}
-            className="w-full h-full object-cover scale-[1.05] parallax-img"
+            alt="Currently Building"
+            className="w-full h-full object-cover parallax-img"
             data-speed="0.08"
           />
-          {/* Dark gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/30" />
-
-          {/* TOP BAR */}
-          <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-6 md:px-10 pt-6 md:pt-8">
-            <div className="flex items-center gap-3 font-mono text-[9px] text-white/50 tracking-[0.25em] uppercase">
-              <span>{currentlyBuilding.index}</span>
-              <span className="text-white/20">/</span>
-              <span>CURRENTLY BUILDING</span>
-            </div>
-            <div className="hidden md:flex items-center gap-4 font-mono text-[9px] text-white/40 tracking-[0.2em] uppercase">
-              {currentlyBuilding.tags.map((t, i) => (
-                <span key={i} className="flex items-center gap-4">
-                  {i > 0 && <span className="text-white/20">/</span>}
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* MAIN CONTENT — bottom left */}
-          <div className="absolute bottom-0 left-0 right-0 px-6 md:px-10 pb-6 md:pb-8 flex flex-col md:flex-row items-end justify-between gap-6">
-            
-            {/* Left: Title block */}
-            <div className="flex flex-col gap-3 max-w-lg">
-              <h2 className="font-display font-black text-[clamp(2.5rem,6vw,5rem)] leading-[0.85] tracking-tighter uppercase text-white whitespace-pre-line">
-                {currentlyBuilding.title}
-              </h2>
-              <p className="font-sans text-base md:text-lg text-white/60 uppercase tracking-widest font-light">
-                {currentlyBuilding.subtitle}
-              </p>
-              <div className="w-8 h-[1px] bg-white/30 my-1" />
-              <p className="font-sans text-sm md:text-base text-white/50 leading-relaxed whitespace-pre-line">
-                {currentlyBuilding.description}
-              </p>
-            </div>
-
-            {/* Right: CTA */}
-            <a
-              href={currentlyBuilding.ctaHref}
-              className="group hidden md:flex items-center gap-3 font-mono text-[10px] text-white tracking-[0.25em] uppercase border border-white/30 hover:border-white/70 px-5 py-3 transition-all duration-300 flex-shrink-0 relative"
-            >
-              {/* Corner brackets */}
-              <span className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/60" />
-              <span className="absolute top-0 right-0 w-2 h-2 border-t border-r border-white/60" />
-              <span className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/60" />
-              <span className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/60" />
-              {currentlyBuilding.cta}
-              <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-            </a>
-          </div>
         </div>
 
         {/* BOTTOM FEATURE BAR */}
@@ -335,10 +283,7 @@ export default function AboutPage() {
               </span>
             </div>
           ))}
-          {/* Mobile CTA */}
-          <a href={currentlyBuilding.ctaHref} className="md:hidden flex items-center justify-between px-6 py-5 border-t border-white/10 font-mono text-[9px] text-white/60 tracking-widest uppercase">
-            {currentlyBuilding.cta} <span>→</span>
-          </a>
+
         </div>
       </section>
 
