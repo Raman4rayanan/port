@@ -167,8 +167,23 @@ export default function Home() {
 
           <section className="relative h-full w-full flex flex-col justify-between pt-32 pb-10 px-6 md:px-10">
             
-            {/* Vertical Social Orbit */}
-            <div className="absolute top-[20%] left-[2%] z-50 mix-blend-difference hidden lg:block">
+            {/* Vertical Social Orbit — z-50, pointer-events fully enabled */}
+            <div className="absolute top-[20%] left-[2%] z-50 hidden lg:block">
+              {/* SVG connector trace from social orbit into main circuit */}
+              <svg 
+                className="absolute -right-8 top-[20px] pointer-events-none" 
+                width="40" height="120" 
+                overflow="visible"
+              >
+                <path 
+                  d="M 0 0 H 20 V 80 H 40" 
+                  stroke="rgba(255,255,255,0.10)" 
+                  fill="none" 
+                  strokeWidth="1"
+                />
+                <circle cx="0" cy="0" r="2" fill="rgba(255,255,255,0.2)" />
+                <circle cx="40" cy="80" r="2" fill="rgba(255,255,255,0.2)" />
+              </svg>
               <SocialOrbit />
             </div>
 
