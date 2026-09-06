@@ -128,9 +128,9 @@ export default function AboutPage() {
             {/* Image Container with subtle parallax scale */}
             <div className="relative w-full h-full overflow-hidden z-0">
               {/* Note: We use a standard img tag here instead of next/image for simpler GSAP manipulation if needed later, though standard tailwind transitions work great too. */}
-              <img
-                src="/profile.png"
-                alt="Ramanarayanan G"
+              <img 
+                src="/ram_2.png" 
+                alt="Ramanarayanan G" 
                 className="w-full h-full object-cover object-top transition-transform duration-[2s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 filter grayscale-[50%] group-hover:grayscale-0"
               />
             </div>

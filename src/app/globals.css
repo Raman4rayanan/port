@@ -70,6 +70,15 @@
   100% { transform: translateY(100%); }
 }
 
+@keyframes signal-flow {
+  from {
+    stroke-dashoffset: 2000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 /* Lenis Smooth Scroll Recommended CSS */
 html.lenis, html.lenis body {
   height: auto;

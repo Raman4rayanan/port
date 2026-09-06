@@ -12,6 +12,8 @@ import { featuredProjects } from "@/data/projects";
 import { capabilities } from "@/data/skills";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import LivingCircuit from "@/components/motion/LivingCircuit";
+import SocialOrbit from "@/components/motion/SocialOrbit";
 
 export default function Home() {
   const containerRef = useRef<HTMLElement>(null);
@@ -61,8 +63,13 @@ export default function Home() {
             </div>
           </div>
 
+          {/* LIVING CIRCUIT LAYER */}
+          <div className="absolute inset-0 pointer-events-none z-10 parallax-layer" data-speed="0.15">
+            <LivingCircuit />
+          </div>
+
           {/* ENGINEERING VISUAL FIELD */}
-          <div className="absolute inset-0 pointer-events-none z-0 parallax-layer" data-speed="0.1">
+          <div className="absolute inset-0 pointer-events-none z-10 parallax-layer" data-speed="0.1">
             <div className="absolute inset-0 opacity-[0.02]" 
                  style={{ backgroundImage: 'linear-gradient(to right, var(--foreground) 1px, transparent 1px), linear-gradient(to bottom, var(--foreground) 1px, transparent 1px)', backgroundSize: '100px 100px' }} 
             />
@@ -75,22 +82,24 @@ export default function Home() {
             <div className="absolute top-[85%] right-[5%] font-mono text-[8px] text-[var(--foreground)]/20 uppercase tracking-widest hidden md:block">
               X.AXIS / 89.011 +
             </div>
+
+            {/* Scattered Hardware Nodes */}
+            <div className="absolute top-[20%] left-[70%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:block">
+              [ MCU ]
+            </div>
+            <div className="absolute top-[65%] left-[25%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:block">
+              [ SENSOR ]
+            </div>
+            <div className="absolute top-[85%] left-[75%] font-mono text-[8px] text-[var(--muted)] tracking-widest uppercase hidden lg:block">
+              [ I/O ]
+            </div>
           </div>
 
           <section className="relative h-full w-full flex flex-col justify-between pt-32 pb-10 px-6 md:px-10">
             
-            {/* SYSTEM MARKER */}
-            <div className="absolute top-[18%] md:top-[22%] left-[8%] md:left-[14%] flex flex-col items-start z-10 parallax-layer" data-speed="0.2">
-              <div className="flex items-center gap-4">
-                <div className="w-1.5 h-1.5 rounded-full bg-[var(--foreground)] shadow-[0_0_10px_var(--foreground)]" />
-                <div className="w-24 h-[1px] bg-[var(--foreground)]/20" />
-              </div>
-              <div className="mt-3 font-mono text-[9px] leading-relaxed text-[var(--muted)] tracking-[0.2em] uppercase">
-                RGM / 001<br/>
-                FIELD / ELECTRONICS<br/>
-                MODE / BUILD<br/>
-                STATUS / ACTIVE
-              </div>
+            {/* SOCIAL ORBIT MARKER */}
+            <div className="absolute top-[18%] md:top-[22%] left-[8%] md:left-[14%] z-20 parallax-layer" data-speed="0.2">
+              <SocialOrbit />
             </div>
 
             {/* VERTICAL SYSTEM LABEL */}
@@ -113,9 +122,10 @@ export default function Home() {
                   {siteConfig.identity.primary}
                 </FadeIn>
 
-                {/* Quote moved up */}
-                <FadeIn delay={0.4} className="mt-8 md:mt-12 font-serif text-[clamp(1.5rem,3vw,2.5rem)] italic text-[var(--foreground)]/90 max-w-lg leading-tight">
-                  &quot;{siteConfig.identity.statement}&quot;
+                {/* Motto */}
+                <FadeIn delay={0.4} className="mt-8 md:mt-12 font-serif text-[clamp(1.5rem,3vw,2.5rem)] text-[var(--foreground)] max-w-lg leading-[1.3] flex flex-col gap-3">
+                  <span className="opacity-60">Curious by default.</span>
+                  <span className="opacity-90 font-medium">Building by choice.</span>
                 </FadeIn>
               </div>
 

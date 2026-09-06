@@ -5,12 +5,13 @@ export const siteConfig = {
   identity: {
     primary: "Engineer / Builder / Innovator",
     field: "Electronics & Communication Engineering",
-    statement: "I build things that turn ideas into working systems.",
+    statement: "Curious by default.\nBuilding by choice.",
     tags: ["Hardware", "Software", "IoT", "Robotics", "Product Development"],
   },
   contact: {
     email: "", // Intentionally left blank until provided by user
-    linkedin: "", 
-    github: "", 
+    linkedin: "#", 
+    github: "#", 
+    instagram: "#",
   }
 };
