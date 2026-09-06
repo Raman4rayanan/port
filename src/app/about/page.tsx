@@ -247,7 +247,7 @@ export default function AboutPage() {
       */}
       <section className="relative w-full border-b border-[var(--foreground)]/10 overflow-hidden bg-[#0a0a0a]">
         {/* Full-bleed image */}
-        <div className="relative w-full h-[70vh] md:h-[85vh] overflow-hidden">
+        <div className="relative w-full aspect-[4/3] md:aspect-auto md:h-[85vh] overflow-hidden">
           <img
             src={currentlyBuilding.image}
             alt="Currently Building"

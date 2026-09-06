@@ -79,7 +79,7 @@ export default function Home() {
 
               {/* Typography Layer */}
               <div className="flex flex-col gap-4 md:gap-6 w-full md:w-1/2 parallax-layer z-30 pb-2 md:pb-24" data-speed="0.4">
-                <h1 className="font-display text-[clamp(2.5rem,12vw,9rem)] leading-[0.85] md:leading-[0.8] font-black tracking-tighter uppercase relative">
+                <h1 className="font-display text-[clamp(1.75rem,10.5vw,9rem)] leading-[0.85] md:leading-[0.8] font-black tracking-tighter uppercase relative w-full">
                   <TextReveal delay={0.1}>{siteConfig.shortName}</TextReveal>
                 </h1>
 
