@@ -9,7 +9,6 @@ import ParallaxImage from "@/components/motion/ParallaxImage";
 import MagneticLink from "@/components/motion/MagneticLink";
 import { siteConfig } from "@/data/site";
 import FeaturedBuilds from "@/components/FeaturedBuilds";
-import { capabilities } from "@/data/skills";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SocialOrbit from "@/components/motion/SocialOrbit";
