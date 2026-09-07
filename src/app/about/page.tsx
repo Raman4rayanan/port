@@ -247,7 +247,7 @@ export default function AboutPage() {
       */}
       <section className="relative w-full border-b border-[var(--foreground)]/10 overflow-hidden bg-[#0a0a0a]">
         {/* Full-bleed image */}
-        <div className="relative w-full h-auto md:h-[85vh] overflow-hidden flex items-center justify-center">
+        <div className="relative w-full h-auto md:h-[85vh] overflow-hidden flex items-center justify-center group/container">
           <picture className="w-full h-full block">
             <source media="(max-width: 767px)" srcSet={currentlyBuilding.mobileImage || currentlyBuilding.image} />
             <source media="(min-width: 768px)" srcSet={currentlyBuilding.image} />
@@ -258,6 +258,16 @@ export default function AboutPage() {
               data-speed="0.08"
             />
           </picture>
+
+          {/* CTA Button Overlay */}
+          <div className="absolute bottom-6 right-6 md:bottom-12 md:right-12 z-10 pointer-events-none opacity-100 md:opacity-0 md:group-hover/container:opacity-100 transition-opacity duration-500">
+            <MagneticLink>
+              <Link href={currentlyBuilding.ctaHref} className="pointer-events-auto flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 bg-[#0a0a0a]/80 backdrop-blur-md border border-white/20 text-white font-mono text-[10px] md:text-xs tracking-widest hover:bg-white hover:text-black transition-colors duration-500 interactive group" data-cursor-text="EXPLORE">
+                {currentlyBuilding.cta}
+                <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+              </Link>
+            </MagneticLink>
+          </div>
         </div>
 
         {/* BOTTOM FEATURE BAR */}
