@@ -77,7 +77,7 @@ export default function Home() {
             <div className="relative z-20 w-full h-full flex flex-col md:flex-row justify-between items-center md:items-end gap-6 md:gap-10 flex-1 px-0 md:px-12 lg:px-20 pb-10 md:pb-20">
 
               {/* Typography Layer */}
-              <div className="flex flex-col gap-4 md:gap-6 w-full md:w-1/2 parallax-layer z-30 pb-2 md:pb-24" data-speed="0.4">
+              <div className="flex flex-col gap-4 md:gap-6 w-full md:w-1/2 parallax-layer z-30 pt-16 md:pt-32 pb-2 md:pb-16" data-speed="0.4">
                 <h1 className="font-display text-[clamp(1.75rem,10.5vw,9rem)] leading-[0.85] md:leading-[0.8] font-black tracking-tighter uppercase relative w-full">
                   <TextReveal delay={0.1}>{siteConfig.shortName}</TextReveal>
                 </h1>
@@ -87,11 +87,21 @@ export default function Home() {
                   {siteConfig.identity.primary}
                 </FadeIn>
 
-                {/* Motto */}
-                <FadeIn delay={0.4} className="mt-4 md:mt-12 font-serif text-[clamp(1.5rem,3vw,2.5rem)] text-[var(--foreground)] max-w-lg leading-[1.3] flex flex-col gap-2 md:gap-3 relative z-30">
-                  <span className="opacity-50">Curious by default.</span>
-                  <span className="opacity-100 font-semibold">Building by choice.</span>
-                </FadeIn>
+                {/* Motto & Resume Button */}
+                <div className="mt-4 md:mt-12 flex flex-col md:flex-row md:items-center gap-8 md:gap-16 relative z-30">
+                  <FadeIn delay={0.4} className="font-serif text-[clamp(1.5rem,3vw,2.5rem)] text-[var(--foreground)] max-w-lg leading-[1.3] flex flex-col gap-2 md:gap-3">
+                    <span className="opacity-50">Curious by default.</span>
+                    <span className="opacity-100 font-semibold">Building by choice.</span>
+                  </FadeIn>
+
+                  <FadeIn delay={0.5}>
+                    <MagneticLink>
+                      <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--foreground)]/20 hover:border-[var(--foreground)] text-xs md:text-sm font-mono tracking-widest uppercase transition-colors interactive group bg-[var(--background)]/50 backdrop-blur-sm" data-cursor-text="OPEN">
+                        RESUME <span className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">&nearr;</span>
+                      </a>
+                    </MagneticLink>
+                  </FadeIn>
+                </div>
               </div>
 
               {/* Profile Image Layer (Larger scale, anchors composition) */}
@@ -167,7 +177,47 @@ export default function Home() {
           {/* FEATURED BUILDS */}
           <FeaturedBuilds />
 
+          {/* MILESTONES PREVIEW */}
+          <section className="relative min-h-screen w-full py-20 px-6 md:px-10 flex flex-col justify-center border-t border-[var(--foreground)]/10">
+            <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row gap-10">
 
+              <div className="w-full md:w-1/3 flex flex-col gap-10">
+                <FadeIn className="font-mono text-xs tracking-widest text-[var(--muted)] uppercase">
+                  [ 03 / MILESTONES ]
+                </FadeIn>
+              </div>
+
+              <div className="w-full md:w-2/3 md:pl-10">
+                <h2 className="font-display text-[clamp(2.5rem,5vw,5rem)] font-medium tracking-tight leading-[1.1] mb-10">
+                  <SplitText text="MILESTONES" />
+                </h2>
+                <div className="font-sans text-lg md:text-xl text-[var(--muted)] max-w-2xl flex flex-col gap-6 mb-16">
+                  <FadeIn delay={0.2}>
+                    A record of the technical knowledge, recognition, and original ideas that have shaped the way I build.
+                  </FadeIn>
+                </div>
+                
+                <div className="flex flex-col gap-12 mb-16">
+                  <FadeIn delay={0.3} className="flex flex-col gap-4">
+                     <h3 className="font-display text-2xl text-white uppercase tracking-tight">CERTIFICATIONS</h3>
+                     <p className="font-sans text-[var(--muted)]">Technical credentials, courses, workshops and continuous learning.</p>
+                  </FadeIn>
+                  <FadeIn delay={0.4} className="flex flex-col gap-4">
+                     <h3 className="font-display text-2xl text-white uppercase tracking-tight">INNOVATIONS</h3>
+                     <p className="font-sans text-[var(--muted)]">Original engineering ideas, experimental systems and technical developments.</p>
+                  </FadeIn>
+                </div>
+
+                <FadeIn delay={0.5} className="flex flex-col md:flex-row gap-8 font-mono text-sm tracking-widest uppercase">
+                  <MagneticLink>
+                    <Link href="/milestones" className="hover:text-[var(--accent)] transition-colors interactive pb-1 border-b border-[var(--foreground)] hover:border-[var(--accent)]" data-cursor-text="EXPLORE">
+                      EXPLORE MILESTONES &rarr;
+                    </Link>
+                  </MagneticLink>
+                </FadeIn>
+              </div>
+            </div>
+          </section>
 
 
 
