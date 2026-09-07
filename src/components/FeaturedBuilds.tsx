@@ -126,15 +126,27 @@ export default function FeaturedBuilds() {
                   
                   {/* Image Area */}
                   <div className="w-full h-[45%] md:w-1/2 md:h-full relative overflow-hidden bg-black flex items-center justify-center">
-                    {project.image ? (
+                    {project.image && (
                        <ParallaxImage 
                          src={project.image}
                          alt={project.title}
                          speed={0.05}
-                         className="w-full h-full"
+                         className={project.mobileImage ? "hidden md:block w-full h-full" : "w-full h-full"}
                          imageClassName="object-cover w-full h-full group-hover:scale-105 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]"
                        />
-                    ) : (
+                    )}
+                    
+                    {project.mobileImage && (
+                       <ParallaxImage 
+                         src={project.mobileImage}
+                         alt={project.title}
+                         speed={0.05}
+                         className="block md:hidden w-full h-full"
+                         imageClassName="object-cover w-full h-full group-hover:scale-105 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]"
+                       />
+                    )}
+                    
+                    {!project.image && !project.mobileImage && (
                        <div className="absolute inset-0 bg-[#0a0a0a] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/20 to-transparent flex items-center justify-center parallax-img" data-speed="0.05">
                          <div className="font-mono text-xs text-zinc-600 tracking-widest uppercase">SYS_IMG_PENDING</div>
                        </div>

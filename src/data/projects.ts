@@ -16,6 +16,8 @@ export const featuredProjects: Project[] = [
     category: "SECURITY / EMBEDDED / ELECTRONICS",
     shortDescription: "A concealed security system designed to detect unauthorized access and respond without relying on a visible conventional security device.",
     technologies: ["EMBEDDED", "SENSORS", "ELECTRONICS"],
+    image: "/invisible_security_desk.png",
+    mobileImage: "/invisible_security_mobile.png"
   },
   {
     id: "wheel-speed-sensor",
