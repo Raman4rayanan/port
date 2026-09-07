@@ -23,31 +23,31 @@ export default function ContactPage() {
     { name: "INSTAGRAM", url: "https://instagram.com/placeholder" } // using placeholder if not in config
   ].filter(link => link.url);
 
-  const emailToUse = siteConfig.contact.email || "ramanarayanan@gmail.com";
+  const emailToUse = siteConfig.contact.email || "ramanarayanan.gs@gmail.com";
 
   return (
     <main className="w-full min-h-screen bg-[#0a0a0a] text-white pt-32 pb-20 selection:bg-white selection:text-black">
-      
+
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* HERO SECTION */}
         <section className="mb-32 md:mb-48 border-b border-white/10 pb-20">
           <FadeIn className="font-mono text-xs tracking-widest text-zinc-500 mb-12 uppercase">
             [ 06 / CONTACT ]
           </FadeIn>
-          
+
           <h1 className="font-display text-[clamp(4rem,10vw,12rem)] leading-[0.85] font-black uppercase tracking-tighter w-full mb-12">
             <TextReveal>LET&apos;S</TextReveal><br />
             <TextReveal delay={0.1}>BUILD</TextReveal><br />
             <TextReveal delay={0.2}>SOMETHING.</TextReveal>
           </h1>
-          
+
           <FadeIn delay={0.3} className="font-sans text-xl md:text-3xl text-zinc-400 max-w-3xl leading-relaxed">
             Have a project, technical idea, collaboration or problem worth exploring? Let&apos;s talk.
           </FadeIn>
         </section>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 mb-32 md:mb-48">
-          
+
           {/* LEFT COLUMN */}
           <div className="flex flex-col gap-20">
             {/* PRIMARY CONTACT */}
@@ -101,33 +101,33 @@ export default function ContactPage() {
               </FadeIn>
               <FadeIn delay={0.2}>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-10">
-                  
+
                   <div className="flex flex-col gap-2">
                     <label className="font-mono text-[10px] tracking-widest text-zinc-500 uppercase">NAME</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       required
-                      className="w-full bg-transparent border-b border-white/20 pb-4 pt-2 font-sans text-lg text-white placeholder-zinc-700 focus:outline-none focus:border-white transition-colors rounded-none" 
+                      className="w-full bg-transparent border-b border-white/20 pb-4 pt-2 font-sans text-lg text-white placeholder-zinc-700 focus:outline-none focus:border-white transition-colors rounded-none"
                       placeholder="Your name"
                     />
                   </div>
-                  
+
                   <div className="flex flex-col gap-2">
                     <label className="font-mono text-[10px] tracking-widest text-zinc-500 uppercase">EMAIL</label>
-                    <input 
-                      type="email" 
+                    <input
+                      type="email"
                       required
-                      className="w-full bg-transparent border-b border-white/20 pb-4 pt-2 font-sans text-lg text-white placeholder-zinc-700 focus:outline-none focus:border-white transition-colors rounded-none" 
+                      className="w-full bg-transparent border-b border-white/20 pb-4 pt-2 font-sans text-lg text-white placeholder-zinc-700 focus:outline-none focus:border-white transition-colors rounded-none"
                       placeholder="your@email.com"
                     />
                   </div>
 
                   <div className="flex flex-col gap-2">
                     <label className="font-mono text-[10px] tracking-widest text-zinc-500 uppercase">MESSAGE</label>
-                    <textarea 
+                    <textarea
                       required
                       rows={4}
-                      className="w-full bg-transparent border-b border-white/20 pb-4 pt-2 font-sans text-lg text-white placeholder-zinc-700 focus:outline-none focus:border-white transition-colors resize-none rounded-none" 
+                      className="w-full bg-transparent border-b border-white/20 pb-4 pt-2 font-sans text-lg text-white placeholder-zinc-700 focus:outline-none focus:border-white transition-colors resize-none rounded-none"
                       placeholder="How can we work together?"
                     />
                   </div>
@@ -147,7 +147,7 @@ export default function ContactPage() {
               <div className="grid grid-cols-2 gap-x-8 gap-y-12">
                 <FadeIn delay={0.3} className="flex flex-col gap-4">
                   <div className="font-mono text-[10px] tracking-widest text-zinc-500 uppercase">[ STATUS ]</div>
-                  <div className="font-mono text-xs tracking-widest text-emerald-400 uppercase leading-relaxed">OPEN TO<br/>COLLABORATION</div>
+                  <div className="font-mono text-xs tracking-widest text-emerald-400 uppercase leading-relaxed">OPEN TO<br />COLLABORATION</div>
                 </FadeIn>
                 <FadeIn delay={0.4} className="flex flex-col gap-4">
                   <div className="font-mono text-[10px] tracking-widest text-zinc-500 uppercase">[ BASED ]</div>
@@ -155,11 +155,11 @@ export default function ContactPage() {
                 </FadeIn>
                 <FadeIn delay={0.5} className="flex flex-col gap-4 col-span-2 md:col-span-1">
                   <div className="font-mono text-[10px] tracking-widest text-zinc-500 uppercase">[ FOCUS ]</div>
-                  <div className="font-mono text-xs tracking-widest text-white uppercase leading-relaxed">HARDWARE / EMBEDDED<br/>IOT / SOFTWARE</div>
+                  <div className="font-mono text-xs tracking-widest text-white uppercase leading-relaxed">HARDWARE / EMBEDDED<br />IOT / SOFTWARE</div>
                 </FadeIn>
                 <FadeIn delay={0.6} className="flex flex-col gap-4 col-span-2 md:col-span-1">
                   <div className="font-mono text-[10px] tracking-widest text-zinc-500 uppercase">[ RESPONSE ]</div>
-                  <div className="font-mono text-xs tracking-widest text-white uppercase leading-relaxed">USUALLY WITHIN<br/>24&ndash;48 HOURS</div>
+                  <div className="font-mono text-xs tracking-widest text-white uppercase leading-relaxed">USUALLY WITHIN<br />24&ndash;48 HOURS</div>
                 </FadeIn>
               </div>
             </section>
