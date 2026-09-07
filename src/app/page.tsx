@@ -169,79 +169,16 @@ export default function Home() {
           <FeaturedBuilds />
 
 
-          {/* CAPABILITIES */}
-          <section className="relative min-h-[50svh] w-full py-32 overflow-hidden flex flex-col justify-center border-t border-[var(--foreground)]/10 bg-[#040405] text-[#FAFAFA]">
-            <FadeIn className="font-mono text-xs tracking-widest text-zinc-500 mb-10 px-6 md:px-10 uppercase absolute top-10 left-0">
-              [ 03 / CAPABILITIES ]
-            </FadeIn>
 
-            <div className="relative flex overflow-x-hidden group w-full mt-20">
-              <div className="flex whitespace-nowrap animate-marquee group-hover:[animation-play-state:paused]">
-                {/* We map capabilities 3 times so the marquee has plenty of width to seamlessly loop back at -50% */}
-                {[...capabilities, ...capabilities, ...capabilities].map((cap, i) => (
-                  <Link key={`${cap.id}-${i}`} href={`/skills#${cap.id}`} className="mx-8 text-[clamp(4rem,10vw,10rem)] font-display font-black uppercase tracking-tighter text-zinc-800 hover:text-white transition-colors duration-500 interactive" data-cursor-text="VIEW">
-                    {cap.label} <span className="text-zinc-800 mx-8 opacity-50">&bull;</span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </section>
 
-          {/* INNOVATIONS */}
-          <section className="relative min-h-screen w-full py-20 px-6 md:px-10 flex flex-col justify-center border-t border-[var(--foreground)]/10 overflow-hidden">
-            {/* Subtle schematic grid background */}
-            <div className="absolute inset-0 pointer-events-none opacity-[0.05] z-0"
-              style={{ backgroundImage: 'linear-gradient(to right, #000 2px, transparent 2px), linear-gradient(to bottom, #000 2px, transparent 2px)', backgroundSize: '100px 100px' }}
-            />
-
-            <div className="max-w-7xl mx-auto w-full relative z-10">
-              <div className="w-full flex flex-col md:flex-row justify-between items-start gap-10">
-                <div className="w-full md:w-3/5">
-                  <FadeIn className="font-mono text-xs tracking-widest text-[var(--muted)] mb-10 uppercase">
-                    [ 04 / INNOVATION ]
-                  </FadeIn>
-                  <h2 className="font-display text-[clamp(3rem,6vw,6rem)] font-medium tracking-tight leading-tight">
-                    BUILDING BEYOND <br />
-                    <span className="italic text-[var(--muted)]">THE OBVIOUS.</span>
-                  </h2>
-                </div>
-
-                <div className="w-full md:w-2/5 mt-10 md:mt-0 flex flex-col gap-6">
-                  <FadeIn delay={0.2}>
-                    <p className="font-sans text-[var(--muted)] text-lg">
-                      I’m interested in engineering ideas that solve practical problems rather than existing only as demonstrations.
-                    </p>
-                  </FadeIn>
-                  <FadeIn delay={0.3}>
-                    <p className="font-sans text-[var(--muted)] text-lg">
-                      My innovation work focuses on turning engineering concepts into functional systems through prototyping, testing and iteration.
-                    </p>
-                  </FadeIn>
-                  <FadeIn delay={0.4}>
-                    <p className="font-mono text-xs uppercase tracking-widest text-[var(--foreground)] border-l-2 border-[var(--accent)] pl-4 py-2 mt-4">
-                      PATENT / RESEARCH / PRODUCT DEVELOPMENT
-                    </p>
-                  </FadeIn>
-                  <FadeIn delay={0.5} className="mt-8">
-                    <MagneticLink>
-                      <Link href="/innovations" className="group font-sans text-lg md:text-xl border-b border-[var(--foreground)] pb-1 hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors interactive">
-                        EXPLORE INNOVATIONS <span className="inline-block transition-transform group-hover:translate-x-2">&rarr;</span>
-                      </Link>
-                    </MagneticLink>
-                  </FadeIn>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* ABOUT / ARCHIVE */}
+          {/* CERTIFICATIONS AND ACHIEVEMENTS */}
           <section className="relative min-h-screen w-full py-20 px-6 md:px-10 flex flex-col justify-center border-t border-[var(--foreground)]/10">
             <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row gap-10">
 
               {/* Archive Header / 3D Resume Preview */}
               <div className="w-full md:w-1/3 flex flex-col gap-10">
                 <FadeIn className="font-mono text-xs tracking-widest text-[var(--muted)] uppercase">
-                  [ 05 / ARCHIVE ]
+                  [ 03 / CERTIFICATIONS AND ACHIEVEMENTS ]
                 </FadeIn>
 
                 <FadeIn delay={0.2} className="relative w-full max-w-[280px] aspect-[1/1.4] group hidden md:block" style={{ perspective: '1000px' }}>
