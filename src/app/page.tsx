@@ -170,65 +170,7 @@ export default function Home() {
 
 
 
-          {/* CERTIFICATIONS AND ACHIEVEMENTS */}
-          <section className="relative min-h-screen w-full py-20 px-6 md:px-10 flex flex-col justify-center border-t border-[var(--foreground)]/10">
-            <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row gap-10">
 
-              {/* Archive Header / 3D Resume Preview */}
-              <div className="w-full md:w-1/3 flex flex-col gap-10">
-                <FadeIn className="font-mono text-xs tracking-widest text-[var(--muted)] uppercase">
-                  [ 03 / CERTIFICATIONS AND ACHIEVEMENTS ]
-                </FadeIn>
-
-                <FadeIn delay={0.2} className="relative w-full max-w-[280px] aspect-[1/1.4] group hidden md:block" style={{ perspective: '1000px' }}>
-                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="block w-full h-full relative transition-transform duration-700 transform-style-3d group-hover:rotate-y-[-10deg] group-hover:rotate-x-[5deg] group-hover:scale-105 interactive" data-cursor-text="OPEN RESUME">
-
-                    {/* 3D Paper Document Effect */}
-                    <div className="absolute inset-0 bg-white shadow-[20px_20px_40px_rgba(0,0,0,0.1)] border border-zinc-200 p-6 flex flex-col opacity-90 group-hover:opacity-100 transition-all duration-700 bg-[linear-gradient(to_bottom,transparent_0px,transparent_calc(100%_-_1px),#f4f4f5_calc(100%_-_1px))] bg-[length:100%_16px]">
-
-                      {/* Fake resume skeleton */}
-                      <div className="w-full border-b-2 border-zinc-900 pb-2 mb-4">
-                        <div className="w-2/3 h-4 bg-zinc-900 mb-2 rounded-sm"></div>
-                        <div className="w-1/3 h-2 bg-zinc-400 rounded-sm"></div>
-                      </div>
-
-                      <div className="w-1/2 h-3 bg-zinc-300 mb-4 rounded-sm"></div>
-                      <div className="w-full h-2 bg-zinc-200 mb-2 rounded-sm"></div>
-                      <div className="w-full h-2 bg-zinc-200 mb-2 rounded-sm"></div>
-                      <div className="w-4/5 h-2 bg-zinc-200 mb-6 rounded-sm"></div>
-
-                      <div className="w-1/3 h-3 bg-zinc-300 mb-4 rounded-sm"></div>
-                      <div className="w-full h-2 bg-zinc-200 mb-2 rounded-sm"></div>
-                      <div className="w-11/12 h-2 bg-zinc-200 mb-2 rounded-sm"></div>
-                      <div className="w-full h-2 bg-zinc-200 mb-2 rounded-sm"></div>
-                    </div>
-
-                    <div className="absolute -bottom-4 -right-4 bg-[var(--foreground)] text-[var(--background)] font-mono text-[10px] px-3 py-1 uppercase tracking-widest shadow-xl transition-transform duration-700 group-hover:translate-x-2 group-hover:translate-y-2">
-                      VIEW RESUME &nearr;
-                    </div>
-                  </a>
-                </FadeIn>
-              </div>
-
-              <div className="w-full md:w-2/3 md:pl-10">
-                <h2 className="font-display text-[clamp(2.5rem,5vw,5rem)] font-medium tracking-tight leading-[1.1] mb-10">
-                  <SplitText text="ENGINEERING IS A CONTINUOUS EXPERIMENT." />
-                </h2>
-                <div className="font-sans text-lg md:text-xl text-[var(--muted)] max-w-2xl flex flex-col gap-6 mb-16">
-                  <FadeIn delay={0.2}>
-                    Every project is an opportunity to understand something I didn&apos;t know before.
-                  </FadeIn>
-                  <FadeIn delay={0.3}>
-                    From electronics and embedded systems to software and product development, I’m constantly experimenting with how different technologies can work together.
-                  </FadeIn>
-                </div>
-
-                <FadeIn delay={0.4} className="flex flex-col md:flex-row gap-8 font-mono text-sm tracking-widest uppercase">
-                  <Link href="/innovations" className="hover:text-[var(--accent)] transition-colors interactive">INNOVATIONS &rarr;</Link>
-                </FadeIn>
-              </div>
-            </div>
-          </section>
 
         </div>
       </main>
