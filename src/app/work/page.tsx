@@ -1,11 +1,15 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import TextReveal from "@/components/motion/TextReveal";
 import FadeIn from "@/components/motion/FadeIn";
 import Link from "next/link";
-import { featuredProjects } from "@/data/projects";
+import { type Project } from "@/data/projects";
+import { getProjects } from "@/lib/store";
 
 export default function WorkPage() {
+  const [projects, setProjects] = useState<Project[]>([]);
+  useEffect(() => { setProjects(getProjects()); }, []); // eslint-disable-line react-hooks/set-state-in-effect
   return (
     <main className="w-full min-h-screen bg-[#0a0a0a] text-[#FAFAFA] pt-40 pb-32 px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
@@ -19,7 +23,7 @@ export default function WorkPage() {
         </h1>
         
         <div className="flex flex-col border-t border-white/10 mt-10">
-          {featuredProjects.map((project, index) => (
+          {projects.map((project, index) => (
             <FadeIn key={project.id} delay={0.1 + (index * 0.1)}>
               <Link href={`/work/${project.id}`} className="group block interactive w-full" data-cursor-text="VIEW">
                 <div className="py-12 border-b border-white/10 flex flex-col justify-center relative">

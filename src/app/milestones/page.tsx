@@ -1,19 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import FadeIn from "@/components/motion/FadeIn";
 import TextReveal from "@/components/motion/TextReveal";
 import MagneticLink from "@/components/motion/MagneticLink";
 import CertificateModal from "@/components/CertificateModal";
-import { certifications, innovations } from "@/data/milestones";
+import { type Certification, type Innovation } from "@/data/milestones";
+import { getCertifications, getInnovations } from "@/lib/store";
 
 export default function MilestonesPage() {
+  const [certs, setCerts] = useState<Certification[]>([]);
+  const [invs, setInvs] = useState<Innovation[]>([]);
   const [modalState, setModalState] = useState<{isOpen: boolean; image: string; title: string}>({
-    isOpen: false,
-    image: "",
-    title: "",
+    isOpen: false, image: "", title: "",
   });
+
+  useEffect(() => {
+    setCerts(getCertifications()); // eslint-disable-line react-hooks/set-state-in-effect
+    setInvs(getInnovations());
+  }, []);
 
   const openModal = (image: string, title: string) => {
     setModalState({ isOpen: true, image, title });
@@ -46,7 +52,7 @@ export default function MilestonesPage() {
         </FadeIn>
 
         <div className="flex flex-col border-t border-white/10">
-          {certifications.map((cert, i) => (
+          {certs.map((cert, i) => (
             <FadeIn key={cert.id} delay={0.1 * i} className="group flex flex-col md:flex-row justify-between items-start md:items-center py-10 md:py-12 border-b border-white/10 gap-6 md:gap-10">
               
               <div className="flex flex-col md:flex-row gap-6 md:gap-12 md:items-center w-full md:w-auto">
@@ -87,7 +93,7 @@ export default function MilestonesPage() {
         </FadeIn>
 
         <div className="flex flex-col border-t border-white/10">
-          {innovations.map((inv, i) => (
+          {invs.map((inv, i) => (
             <FadeIn key={inv.id} delay={0.1 * i} className="group flex flex-col md:flex-row justify-between items-start md:items-center py-10 md:py-12 border-b border-white/10 gap-6 md:gap-10">
               
               <div className="flex flex-col md:flex-row gap-6 md:gap-12 md:items-center w-full md:w-auto">
