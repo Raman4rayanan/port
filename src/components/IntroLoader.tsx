@@ -158,7 +158,7 @@ export default function IntroLoader({ onComplete }: { onComplete: () => void }) 
           ref={identityRef}
           className="font-display font-black uppercase tracking-tighter leading-[0.85] text-white text-[clamp(2.5rem,9vw,7.5rem)] w-full max-w-5xl"
         >
-          {siteConfig.name}
+          {siteConfig.shortName}
         </div>
 
         {/* Subtitle */}
