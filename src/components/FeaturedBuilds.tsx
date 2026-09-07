@@ -27,7 +27,6 @@ export default function FeaturedBuilds() {
     cardsRef.current.forEach((card, index) => {
       if (!card) return;
       if (index === 0) {
-        gsap.set(card, { pointerEvents: "auto" });
         return; 
       }
       
@@ -35,7 +34,6 @@ export default function FeaturedBuilds() {
         scale: 1 - (index * 0.04),
         y: index * yOffset,
         autoAlpha: 1 - (index * 0.15),
-        pointerEvents: "none"
       });
     });
 
@@ -60,7 +58,6 @@ export default function FeaturedBuilds() {
       const stepTl = gsap.timeline();
 
       // Active card peels away (up and fades)
-      stepTl.set(activeCard, { pointerEvents: "none" }, 0);
       stepTl.to(activeCard, {
         y: -100 - (yOffset * 2),
         autoAlpha: 0,
@@ -70,7 +67,6 @@ export default function FeaturedBuilds() {
       }, 0);
 
       // Next card moves to front
-      stepTl.set(nextCard, { pointerEvents: "auto" }, 0);
       stepTl.to(nextCard, {
         y: 0,
         scale: 1,

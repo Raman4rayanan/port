@@ -76,8 +76,6 @@ export default function CustomCursor() {
       style={{
         x: cursorX,
         y: cursorY,
-        translateX: "-50%",
-        translateY: "-50%",
       }}
       initial={{ opacity: 0 }}
       animate={{ 
@@ -86,7 +84,7 @@ export default function CustomCursor() {
       }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
-      <div className="relative flex items-center justify-center">
+      <div className="relative flex items-center justify-center -translate-x-1/2 -translate-y-1/2">
         <div 
           className={`bg-white rounded-full transition-all duration-300 ease-out ${
             hovered && hoverText ? "w-16 h-16" : hovered ? "w-8 h-8" : "w-4 h-4"
