@@ -25,12 +25,16 @@ export default function FeaturedBuilds() {
     // Initial State Setup
     cardsRef.current.forEach((card, index) => {
       if (!card) return;
-      if (index === 0) return; // front card stays 1:1
+      if (index === 0) {
+        gsap.set(card, { pointerEvents: "auto" });
+        return; 
+      }
       
       gsap.set(card, {
         scale: 1 - (index * 0.04),
         y: index * yOffset,
-        opacity: 1 - (index * 0.15),
+        autoAlpha: 1 - (index * 0.15),
+        pointerEvents: "none"
       });
     });
 
@@ -55,19 +59,21 @@ export default function FeaturedBuilds() {
       const stepTl = gsap.timeline();
 
       // Active card peels away (up and fades)
+      stepTl.set(activeCard, { pointerEvents: "none" }, 0);
       stepTl.to(activeCard, {
         y: -100 - (yOffset * 2),
-        opacity: 0,
+        autoAlpha: 0,
         scale: 1.05,
         duration: 1,
         ease: "power2.inOut",
       }, 0);
 
       // Next card moves to front
+      stepTl.set(nextCard, { pointerEvents: "auto" }, 0);
       stepTl.to(nextCard, {
         y: 0,
         scale: 1,
-        opacity: 1,
+        autoAlpha: 1,
         duration: 1,
         ease: "power2.inOut",
       }, 0);
