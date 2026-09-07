@@ -88,7 +88,7 @@ export default function Home() {
                 </FadeIn>
 
                 {/* Motto & Resume Button */}
-                <div className="mt-4 md:mt-12 flex flex-col md:flex-row md:items-center gap-8 md:gap-16 relative z-30">
+                <div className="mt-4 md:mt-12 flex flex-col md:flex-row md:items-center gap-8 md:gap-10 relative z-30">
                   <FadeIn delay={0.4} className="font-serif text-[clamp(1.5rem,3vw,2.5rem)] text-[var(--foreground)] max-w-lg leading-[1.3] flex flex-col gap-2 md:gap-3">
                     <span className="opacity-50">Curious by default.</span>
                     <span className="opacity-100 font-semibold">Building by choice.</span>
@@ -97,7 +97,7 @@ export default function Home() {
                   <FadeIn delay={0.5}>
                     <MagneticLink>
                       <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--foreground)]/20 hover:border-[var(--foreground)] text-xs md:text-sm font-mono tracking-widest uppercase transition-colors interactive group bg-[var(--background)]/50 backdrop-blur-sm" data-cursor-text="OPEN">
-                        RESUME <span className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">&nearr;</span>
+                        MY RESUME <span className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
                       </a>
                     </MagneticLink>
                   </FadeIn>
