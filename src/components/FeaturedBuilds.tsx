@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import ParallaxImage from "@/components/motion/ParallaxImage";
+import MagneticLink from "@/components/motion/MagneticLink";
 import { featuredProjects } from "@/data/projects";
 
 export default function FeaturedBuilds() {
@@ -194,6 +195,15 @@ export default function FeaturedBuilds() {
             </div>
           )
         })}
+      </div>
+
+      {/* Global Background Footer */}
+      <div className="absolute bottom-6 right-6 md:bottom-12 md:right-10 z-10 pointer-events-auto">
+        <MagneticLink>
+          <Link href="/work" className="group font-sans text-lg md:text-xl border-b border-white/50 pb-1 hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors interactive text-white" data-cursor-text="VIEW">
+            MY WORK <span className="inline-block transition-transform group-hover:translate-x-2">&rarr;</span>
+          </Link>
+        </MagneticLink>
       </div>
     </section>
   );

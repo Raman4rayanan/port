@@ -25,6 +25,8 @@ export const featuredProjects: Project[] = [
     category: "AUTOMOTIVE / SENSING / ELECTRONICS",
     shortDescription: "An electronic sensing system designed to measure wheel rotation and translate physical motion into usable speed data.",
     technologies: ["SENSING", "AUTOMOTIVE", "ELECTRONICS"],
+    image: "/wss_desk.png",
+    mobileImage: "/wss_mobile.png"
   },
   {
     id: "roadsense",
@@ -32,6 +34,8 @@ export const featuredProjects: Project[] = [
     category: "EDGE AI / COMPUTER VISION / EMBEDDED",
     shortDescription: "An edge-based vision system exploring real-time detection of potholes, obstacles and road hazards using local processing.",
     technologies: ["EDGE AI", "COMPUTER VISION", "EMBEDDED"],
+    image: "/roadsense_desk.png",
+    mobileImage: "/roadsense_mobile.png"
   },
   {
     id: "gas-guard",
@@ -40,7 +44,7 @@ export const featuredProjects: Project[] = [
     shortDescription: "A smart LPG safety system currently being developed to detect leaks at the hose level, trigger automatic shutoff and alert the user remotely.",
     technologies: ["IOT", "EMBEDDED", "PRODUCT DEV"],
     status: "CURRENTLY BUILDING",
-    image: "/gas1.png",
-    mobileImage: "/gas1-mobile.png"
+    image: "/GAS_desk.png",
+    mobileImage: "/GAS_mobile.png"
   }
 ];
