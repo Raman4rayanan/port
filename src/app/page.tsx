@@ -253,13 +253,13 @@ export default function Home() {
 
             <div className="flex flex-wrap justify-center gap-8 font-mono text-xs tracking-widest text-zinc-500 uppercase mt-10">
               {siteConfig.contact.linkedin && (
-                <a href={siteConfig.contact.linkedin} target="_blank" rel="noreferrer" className="hover:text-[#09090B] transition-colors interactive">LINKEDIN &nearr;</a>
+                <a href={siteConfig.contact.linkedin} target="_blank" rel="noreferrer" className="hover:text-[#09090B] transition-colors interactive">LINKEDIN ↗</a>
               )}
               {siteConfig.contact.github && (
-                <a href={siteConfig.contact.github} target="_blank" rel="noreferrer" className="hover:text-[#09090B] transition-colors interactive">GITHUB &nearr;</a>
+                <a href={siteConfig.contact.github} target="_blank" rel="noreferrer" className="hover:text-[#09090B] transition-colors interactive">GITHUB ↗</a>
               )}
               {siteConfig.contact.email && (
-                <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-[#09090B] transition-colors interactive">EMAIL &nearr;</a>
+                <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-[#09090B] transition-colors interactive">EMAIL ↗</a>
               )}
             </div>
           </FadeIn>
