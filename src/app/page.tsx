@@ -8,7 +8,7 @@ import FadeIn from "@/components/motion/FadeIn";
 import ParallaxImage from "@/components/motion/ParallaxImage";
 import MagneticLink from "@/components/motion/MagneticLink";
 import { siteConfig } from "@/data/site";
-import { featuredProjects } from "@/data/projects";
+import FeaturedBuilds from "@/components/FeaturedBuilds";
 import { capabilities } from "@/data/skills";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -166,74 +166,30 @@ export default function Home() {
           </section>
 
           {/* FEATURED BUILDS */}
-          <section className="relative min-h-screen w-full py-20 px-6 md:px-10 bg-[#09090B] text-[#FAFAFA] flex flex-col justify-center">
+          <FeaturedBuilds />
+
+          {/* EXPERIMENTS */}
+          <section className="relative w-full py-24 px-6 md:px-10 bg-[#09090B] text-[#FAFAFA] flex flex-col justify-center border-t border-white/5">
             <div className="max-w-7xl mx-auto w-full">
-              <FadeIn className="font-mono text-xs tracking-widest text-zinc-500 mb-20 uppercase">
-                [ 02 / FEATURED BUILDS ]
-              </FadeIn>
-              <h2 className="font-display text-[clamp(2.5rem,6vw,6rem)] font-black uppercase tracking-tighter mb-20 text-zinc-800">
-                SELECTED BUILDS
-              </h2>
+              <div className="py-16 md:py-24 border-b border-zinc-800 flex flex-col md:flex-row justify-between items-start gap-10 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-zinc-900/50 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] z-0" />
 
-              <div className="flex flex-col gap-0 border-t border-zinc-800">
-                {featuredProjects.map((project, index) => (
-                  <div key={project.id} className="py-16 md:py-24 border-b border-zinc-800 flex flex-col md:flex-row justify-between items-start gap-10 relative overflow-hidden group">
-                    <div className="absolute inset-0 bg-zinc-900 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] z-0" />
+                <div className="relative z-10 font-mono text-sm text-zinc-600 w-full md:w-auto">
+                  03 / EXPERIMENTS
+                </div>
 
-                    <div className="relative z-10 font-mono text-sm text-zinc-500 w-full md:w-auto">
-                      0{index + 1}
-                    </div>
+                <div className="relative z-10 flex flex-col gap-6 w-full md:w-1/2">
+                  <p className="font-sans text-xl text-zinc-500 italic max-w-md">
+                    A growing archive of smaller electronics experiments, prototypes and technical explorations.
+                  </p>
+                </div>
 
-                    <div className="relative z-10 flex flex-col gap-6 w-full md:w-1/2">
-                      <h3 className="font-display text-[clamp(2rem,4vw,4rem)] font-bold uppercase tracking-tighter leading-none">
-                        {project.title.split(' ').map((word, i) => <span key={i} className="block">{word}</span>)}
-                      </h3>
-                      <p className="font-mono text-xs text-zinc-400 tracking-widest uppercase">
-                        {project.category}
-                      </p>
-                      <p className="font-sans text-sm md:text-base text-zinc-400 max-w-md">
-                        {project.shortDescription}
-                      </p>
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        {project.technologies.map(tech => (
-                          <span key={tech} className="font-mono text-[10px] px-3 py-1 border border-zinc-800 rounded-sm text-zinc-500">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="relative z-10 w-full md:w-1/4 flex justify-end md:items-end h-full mt-10 md:mt-0">
-                      <MagneticLink>
-                        <Link href={`/work/${project.id}`} className="font-mono text-sm uppercase tracking-widest text-zinc-400 hover:text-white transition-colors interactive" data-cursor-text="VIEW PROJECT">
-                          EXPLORE PROJECT &rarr;
-                        </Link>
-                      </MagneticLink>
-                    </div>
-                  </div>
-                ))}
-
-                {/* ARCHIVE IN PROGRESS */}
-                <div className="py-16 md:py-24 border-b border-zinc-800 flex flex-col md:flex-row justify-between items-start gap-10 relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-zinc-900/50 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] z-0" />
-
-                  <div className="relative z-10 font-mono text-sm text-zinc-600 w-full md:w-auto">
-                    03 / EXPERIMENTS
-                  </div>
-
-                  <div className="relative z-10 flex flex-col gap-6 w-full md:w-1/2">
-                    <p className="font-sans text-xl text-zinc-500 italic max-w-md">
-                      A growing archive of smaller electronics experiments, prototypes and technical explorations.
-                    </p>
-                  </div>
-
-                  <div className="relative z-10 w-full md:w-1/4 flex justify-end md:items-end h-full mt-10 md:mt-0">
-                    <MagneticLink>
-                      <Link href="/work" className="font-mono text-sm uppercase tracking-widest text-zinc-500 hover:text-white transition-colors interactive">
-                        ARCHIVE IN PROGRESS &rarr;
-                      </Link>
-                    </MagneticLink>
-                  </div>
+                <div className="relative z-10 w-full md:w-1/4 flex justify-end md:items-end h-full mt-10 md:mt-0">
+                  <MagneticLink>
+                    <Link href="/work" className="font-mono text-sm uppercase tracking-widest text-zinc-500 hover:text-white transition-colors interactive">
+                      ARCHIVE IN PROGRESS &rarr;
+                    </Link>
+                  </MagneticLink>
                 </div>
               </div>
 
