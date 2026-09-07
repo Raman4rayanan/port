@@ -25,8 +25,8 @@ export const featuredProjects: Project[] = [
     category: "AUTOMOTIVE / SENSING / ELECTRONICS",
     shortDescription: "An electronic sensing system designed to measure wheel rotation and translate physical motion into usable speed data.",
     technologies: ["SENSING", "AUTOMOTIVE", "ELECTRONICS"],
-    image: "/wss_desk.png",
-    mobileImage: "/wss_mobile.png"
+    image: "/WSS_desk.png",
+    mobileImage: "/WSS_mobile.png"
   },
   {
     id: "roadsense",
