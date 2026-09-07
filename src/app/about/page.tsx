@@ -248,12 +248,16 @@ export default function AboutPage() {
       <section className="relative w-full border-b border-[var(--foreground)]/10 overflow-hidden bg-[#0a0a0a]">
         {/* Full-bleed image */}
         <div className="relative w-full aspect-video md:aspect-auto md:h-[85vh] overflow-hidden">
-          <img
-            src={currentlyBuilding.image}
-            alt="Currently Building"
-            className="w-full h-full object-cover parallax-img"
-            data-speed="0.08"
-          />
+          <picture>
+            <source media="(max-width: 767px)" srcSet={currentlyBuilding.mobileImage || currentlyBuilding.image} />
+            <source media="(min-width: 768px)" srcSet={currentlyBuilding.image} />
+            <img
+              src={currentlyBuilding.image}
+              alt="Currently Building"
+              className="w-full h-full object-cover parallax-img"
+              data-speed="0.08"
+            />
+          </picture>
         </div>
 
         {/* BOTTOM FEATURE BAR */}

@@ -71,7 +71,8 @@ export const currentlyBuilding = {
   ],
   cta: "VIEW PROJECT",
   ctaHref: "#",
-  image: "/gas1.png"
+  image: "/gas1.png",
+  mobileImage: "/gas1-mobile.png"
 };
 
 export const timeline = [
