@@ -26,30 +26,30 @@ export default function ContactPage() {
   const emailToUse = siteConfig.contact.email || "ramanarayanan.gs@gmail.com";
 
   return (
-    <main className="w-full min-h-screen bg-[#0a0a0a] text-white pt-32 pb-20 selection:bg-white selection:text-black">
+    <main className="w-full min-h-screen bg-[#0a0a0a] text-white pt-24 md:pt-32 pb-16 md:pb-20 selection:bg-white selection:text-black">
 
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* HERO SECTION */}
-        <section className="mb-32 md:mb-48 border-b border-white/10 pb-20">
-          <FadeIn className="font-mono text-xs tracking-widest text-zinc-500 mb-12 uppercase">
+        <section className="mb-20 md:mb-48 border-b border-white/10 pb-12 md:pb-20">
+          <FadeIn className="font-mono text-[10px] md:text-xs tracking-widest text-zinc-500 mb-8 md:mb-12 uppercase">
             [ 06 / CONTACT ]
           </FadeIn>
 
-          <h1 className="font-display text-[clamp(4rem,10vw,12rem)] leading-[0.85] font-black uppercase tracking-tighter w-full mb-12">
+          <h1 className="font-display text-[clamp(2.5rem,10vw,12rem)] md:text-[clamp(4rem,10vw,12rem)] leading-[0.85] font-black uppercase tracking-tighter w-full mb-8 md:mb-12 break-words">
             <TextReveal>LET&apos;S</TextReveal><br />
             <TextReveal delay={0.1}>BUILD</TextReveal><br />
             <TextReveal delay={0.2}>SOMETHING.</TextReveal>
           </h1>
 
-          <FadeIn delay={0.3} className="font-sans text-xl md:text-3xl text-zinc-400 max-w-3xl leading-relaxed">
+          <FadeIn delay={0.3} className="font-sans text-lg md:text-3xl text-zinc-400 max-w-3xl leading-relaxed">
             Have a project, technical idea, collaboration or problem worth exploring? Let&apos;s talk.
           </FadeIn>
         </section>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 mb-32 md:mb-48">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 mb-24 md:mb-48">
 
           {/* LEFT COLUMN */}
-          <div className="flex flex-col gap-20">
+          <div className="flex flex-col gap-16 md:gap-20">
             {/* PRIMARY CONTACT */}
             <section>
               <FadeIn className="font-mono text-[10px] tracking-widest text-[var(--accent)] mb-8 uppercase">
@@ -57,11 +57,11 @@ export default function ContactPage() {
               </FadeIn>
               <FadeIn delay={0.1}>
                 <div className="flex flex-col gap-6 items-start">
-                  <div className="font-sans text-xl md:text-3xl text-white">
+                  <div className="font-sans text-lg md:text-3xl text-white break-all">
                     {emailToUse}
                   </div>
                   <MagneticLink>
-                    <a href={`mailto:${emailToUse}`} className="font-mono text-xs text-zinc-400 tracking-widest uppercase border border-white/20 px-8 py-4 hover:bg-white hover:text-black transition-colors interactive">
+                    <a href={`mailto:${emailToUse}`} className="font-mono text-[10px] md:text-xs text-zinc-400 tracking-widest uppercase border border-white/20 px-6 py-4 md:px-8 hover:bg-white hover:text-black transition-colors interactive">
                       EMAIL ME &rarr;
                     </a>
                   </MagneticLink>
@@ -80,7 +80,7 @@ export default function ContactPage() {
                     <a href={link.url} target="_blank" rel="noopener noreferrer" className="group flex justify-between items-center py-6 md:py-8 interactive" data-cursor-text="VISIT">
                       <div className="flex items-center gap-6">
                         <span className="font-mono text-[10px] text-zinc-500">0{index + 1}</span>
-                        <span className="font-display text-2xl md:text-4xl font-bold uppercase tracking-tight text-white group-hover:translate-x-4 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                        <span className="font-display text-xl md:text-4xl font-bold uppercase tracking-tight text-white group-hover:translate-x-2 md:group-hover:translate-x-4 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
                           {link.name}
                         </span>
                       </div>
@@ -93,7 +93,7 @@ export default function ContactPage() {
           </div>
 
           {/* RIGHT COLUMN */}
-          <div className="flex flex-col gap-20">
+          <div className="flex flex-col gap-16 md:gap-20">
             {/* OPTIONAL FORM */}
             <section>
               <FadeIn className="font-mono text-[10px] tracking-widest text-[var(--accent)] mb-8 uppercase">
@@ -133,7 +133,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="pt-4 flex">
-                    <button type="submit" className="font-mono text-xs tracking-widest uppercase border border-white/20 px-8 py-4 text-white hover:bg-white hover:text-black transition-colors interactive">
+                    <button type="submit" className="font-mono text-[10px] md:text-xs tracking-widest uppercase border border-white/20 px-6 py-4 md:px-8 text-white hover:bg-white hover:text-black transition-colors interactive">
                       {formStatus === "ready" ? "MESSAGE READY \u2713" : "SEND MESSAGE \u2192"}
                     </button>
                   </div>
@@ -168,13 +168,13 @@ export default function ContactPage() {
         </div>
 
         {/* CLOSING STATEMENT */}
-        <section className="pt-20 md:pt-32 border-t border-white/10 flex flex-col items-center justify-center text-center">
-          <h2 className="font-display text-[clamp(3rem,8vw,8rem)] leading-[0.9] font-black uppercase tracking-tighter mb-20">
+        <section className="pt-16 md:pt-32 border-t border-white/10 flex flex-col items-center justify-center text-center">
+          <h2 className="font-display text-[clamp(2.5rem,8vw,8rem)] md:text-[clamp(3rem,8vw,8rem)] leading-[0.9] font-black uppercase tracking-tighter mb-12 md:mb-20">
             <TextReveal>HAVE AN IDEA?</TextReveal><br />
             <TextReveal delay={0.1}>LET&apos;S MAKE IT REAL.</TextReveal>
           </h2>
 
-          <div className="flex flex-wrap justify-center gap-12 font-mono text-xs tracking-widest text-zinc-500 uppercase">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12 font-mono text-[10px] md:text-xs tracking-widest text-zinc-500 uppercase">
             <FadeIn delay={0.2}>
               <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-white transition-colors interactive pb-1 border-b border-transparent hover:border-white">
                 BACK TO TOP &uarr;
