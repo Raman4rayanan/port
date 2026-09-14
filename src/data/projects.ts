@@ -380,8 +380,8 @@ export const featuredProjects: Project[] = [
     ]
   },
   {
-    id: "gas-guard",
-    title: "GAS GUARD",
+    id: "gassential",
+    title: "GASSENTIAL",
     category: "IOT / EMBEDDED / PRODUCT DEVELOPMENT",
     shortDescription: "A smart LPG safety system currently being developed to detect leaks at the hose level, trigger automatic shutoff and alert the user remotely.",
     technologies: ["IOT", "EMBEDDED", "PRODUCT DEV"],
@@ -397,7 +397,7 @@ export const featuredProjects: Project[] = [
         number: "01",
         title: "THE IDEA",
         body: [
-          "Gas Guard is a proactive safety mechanism designed to monitor domestic LPG systems.",
+          "GASSENTIAL is a proactive safety mechanism designed to monitor domestic LPG systems.",
           "Rather than just sounding an alarm when a room fills with gas, the system detects leaks at the source, mechanically shuts off the cylinder valve, and pushes an alert to the user's phone."
         ]
       },

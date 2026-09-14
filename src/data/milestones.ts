@@ -90,12 +90,12 @@ export const innovations: Innovation[] = [
     projectSlug: "roadsense",
   },
   {
-    id: "gas-guard",
-    title: "GAS GUARD",
+    id: "gassential",
+    title: "GASSENTIAL",
     description: "An intelligent autonomous leak detection and emergency shutoff system engineered for industrial pipeline safety.",
     year: "2025",
     domain: "INDUSTRIAL / SAFETY",
     status: "DEPLOYED",
-    projectSlug: "gas-guard",
+    projectSlug: "gassential",
   }
 ];
