@@ -25,8 +25,22 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ramanarayanan| Engineer, Builder, Inventor",
-  description: "Portfolio of Ramanarayanan, an Electronics & Communication Engineering student, builder, and product-development enthusiast.",
+  title: "Ramanarayanan G | Electronics & Communication Engineer",
+  description: "Portfolio of Ramanarayanan G, an Electronics & Communication Engineering student, builder, and product-development enthusiast specializing in embedded systems and IoT.",
+  keywords: [
+    "Ramanarayanan G",
+    "Ramanarayanan",
+    "Ramanarayanan portfolio",
+    "Electronics and Communication Engineer",
+    "Embedded Systems Engineer",
+    "IoT developer portfolio",
+    "Hardware engineer portfolio",
+    "GASSENTIAL project",
+    "Invisible Security System",
+    "RoadSense",
+    "Hardware product development",
+    "C/C++ embedded programmer"
+  ],
 };
 
 export default function RootLayout({
