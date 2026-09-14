@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { getProjects } from '@/data/projects'
+import { featuredProjects, Project } from '@/data/projects'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://ramanarayanan.vercel.app' // Replace with your custom domain if you get one
@@ -22,8 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   // Dynamic project routes
-  const projects = getProjects()
-  const projectRoutes = projects.map((project) => ({
+  const projectRoutes = featuredProjects.map((project: Project) => ({
     url: `${baseUrl}/work/${project.id}`,
     lastModified,
     changeFrequency: 'monthly' as const,
