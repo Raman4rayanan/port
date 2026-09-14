@@ -96,7 +96,7 @@ export default function Home() {
 
                   <FadeIn delay={0.5}>
                     <MagneticLink>
-                      <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--foreground)]/20 hover:border-[var(--foreground)] text-xs md:text-sm font-mono tracking-widest uppercase transition-colors interactive group bg-[var(--background)]/50 backdrop-blur-sm" data-cursor-text="OPEN">
+                      <a href="/RESUME.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--foreground)]/20 hover:border-[var(--foreground)] text-xs md:text-sm font-mono tracking-widest uppercase transition-colors interactive group bg-[var(--background)]/50 backdrop-blur-sm" data-cursor-text="OPEN">
                         MY RESUME <span className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
                       </a>
                     </MagneticLink>
